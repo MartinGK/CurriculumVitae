@@ -1,7 +1,9 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-import Stars  from '../src/components/Stars'
+import Stars from 'components/Stars'
+import Footer from 'components/Footer'
+import Experiences from 'components/Experiences'
 
 export default function Home() {
   return (
@@ -13,37 +15,32 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-        <article>
+        <article className={styles.skillsArticle}>
           <img alt="Imagen pendiente" src=".." />
           <h2>Martin Gainza Koulaksezian</h2>
           <h3>Frontend Developer</h3>
           <div>
             <h4>Skills</h4>
-            <ul>
-              <li>
-                <span></span>
-                <Stars q={5} />
+            <ul className={styles.skillsList}>
+              <li className={styles.skill}>
+                <span>React</span>
+                <Stars q={3} />
               </li>
             </ul>
           </div>
         </article>
+        <section className={styles.rightSection}>
+          <article className={styles.skillsArticle}>
+            <h2>Projects</h2>
+            <div className={styles.projectsContainer}>
+              <div className={styles.project}>
+              </div>
+            </div>
+          </article>
+          <Experiences />
+        </section>
       </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
+      <Footer />
     </div>
   )
 }
