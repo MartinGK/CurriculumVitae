@@ -4,6 +4,24 @@ import styles from '../styles/Home.module.css'
 import Stars from 'components/Stars'
 import Footer from 'components/Footer'
 import Experiences from 'components/Experiences'
+import AboutMe from 'components/AboutMe'
+
+const skills = [
+  { skill: "ReactJS", q: 5 },
+  { skill: "NextJs", q: 5 },
+  { skill: "Redux", q: 5 },
+  { skill: "Testing Library", q: 5 },
+  { skill: "Javascript", q: 5 },
+  { skill: "CSS3", q: 5 },
+  { skill: "SASS", q: 5 },
+  { skill: "TailwindCSS", q: 5 },
+  { skill: "NodeJS", q: 4 },
+  { skill: "Express", q: 4 },
+  { skill: "MongoDB", q: 4 },
+  { skill: "Jest", q: 3 },
+  { skill: "Communication", q: 5 },
+  { skill: "Agile Methodology", q: 5 },
+]
 
 export default function Home() {
   return (
@@ -14,29 +32,37 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.main}>
-        <article className={styles.skillsArticle}>
-          <img alt="Imagen pendiente" src=".." />
-          <h2>Martin Gainza Koulaksezian</h2>
+      <main className="flex p-5">
+        <article className="flex items-center bg-white flex-col text-2xl text-black font-bold py-10 rounded">
+          <Image alt="Imagen pendiente" src="/images/FotoPerfil.jpg" width={250} height={250} quality={100} className="border-orange-500 border-4 rounded-full" />
+          <h2 className="text-3xl">Martin Gainza Koulaksezian</h2>
           <h3>Frontend Developer</h3>
           <div>
             <h4>Skills</h4>
-            <ul className={styles.skillsList}>
-              <li className={styles.skill}>
-                <span>React</span>
-                <Stars q={3} />
+            <ul className="px-20 font-normal">
+              {skills.map(skill => {
+                return (
+                  <li className="flex " key={skill.skill}>
+                    <span className="bg-gray-200 px-5 w-72 flex justify-center mr-10">{skill.skill}</span>
+                    <div className="flex w-32">
+                      <Stars q={skill.q} />
+                    </div>
+                  </li>
+                )
+              })
+              }
+
+              <li className="flex " >
+                <span className="bg-gray-200 px-5 w-72 flex justify-center items-center mr-10">English</span>
+                <span className="flex w-32 text-base text-bold">
+                  Upper-Intermediate
+                </span>
               </li>
             </ul>
           </div>
         </article>
         <section className={styles.rightSection}>
-          <article className={styles.skillsArticle}>
-            <h2>Projects</h2>
-            <div className={styles.projectsContainer}>
-              <div className={styles.project}>
-              </div>
-            </div>
-          </article>
+          <AboutMe />
           <Experiences />
         </section>
       </main>

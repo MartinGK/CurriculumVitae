@@ -141,6 +141,10 @@
   flex-direction: column;
 }
 
+.skillName{
+  margin-right: auto;
+}
+
 .skillsArticle {
   background-color: white;
   border-radius: 5px;
@@ -155,4 +159,8 @@
 .main{
   display: grid;
   grid-template-columns: 1fr 1fr;
+}
+
+.fotoPerfil{
+  border-radius: 50%;
 }
