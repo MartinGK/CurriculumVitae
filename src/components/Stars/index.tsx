@@ -1,4 +1,3 @@
-//componente de 5 estrellas con el prop "q" que define la cantidad de estrellas a color que aparecen
 import { AiFillStar } from 'react-icons/ai';
 
 export const Stars = ({ q }) => {
