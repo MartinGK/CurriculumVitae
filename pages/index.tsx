@@ -13,7 +13,7 @@ export default function Home() {
       <Head>
         <title>Martin GK</title>
         <meta name="description" content="Martin Gainza Koulaksezian CV" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/images/FotoPerfil.jpg" />
       </Head>
 
       <main className="flex p-5">

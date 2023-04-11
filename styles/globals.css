@@ -3,6 +3,16 @@
 @tailwind components;
 @tailwind utilities;
 
+.border-radius-transition {
+  transition: border-radius 1s ease-in-out;
+}
+.padding-transition {
+  transition: padding 1s ease-in-out;
+}
+.padding-transition {
+  transition: margin 1s ease-in-out;
+}
+
 html,
 body {
   padding: 0;
