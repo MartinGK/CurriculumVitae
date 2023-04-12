@@ -4,20 +4,19 @@ import { skills } from '@constants';
 
 const Skills = () => {
   return (
-    <article className="flex flex-col items-center rounded bg-white py-10 text-2xl font-bold text-black">
+    <article className="flex flex-col items-center rounded bg-card-1 py-10 text-xl font-bold text-black">
       <Image
         alt="Imagen pendiente"
         src="/images/FotoPerfil.jpg"
-        width={250}
-        height={250}
+        width={200}
+        height={200}
         quality={100}
-        className="rounded-full border-4 border-orange-500"
+        className="rounded-full border-4 border-primary-1"
       />
-      <h2 className="text-3xl">Martin Gainza Koulaksezian</h2>
+      <h2 className="text-2xl">Martin Gainza Koulaksezian</h2>
       <h3>ReactJS Developer</h3>
       <div>
-        <h4>Skills</h4>
-        <ul className="px-20 font-normal">
+        <ul className="px-10 pt-4 font-normal">
           {skills.map((skill) => {
             return (
               <li className="flex " key={skill.skill}>

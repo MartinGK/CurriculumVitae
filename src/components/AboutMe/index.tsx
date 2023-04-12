@@ -3,7 +3,7 @@ import { getYearsOld } from "helpers";
 
 export const AboutMe = () => {
   return (
-    <div className="m-10 rounded bg-white p-5 text-black">
+    <div className="mx-10 rounded bg-card-1 p-5 text-black">
       <h1 className="text-3xl">About me</h1>
       <div className="mt-5 flex justify-center">
         <div className="w-5/8">

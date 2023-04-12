@@ -3,8 +3,8 @@ import { BsStackOverflow } from "react-icons/bs";
 
 export const Footer = () => {
   return (
-    <footer className="fixed bottom-0 bg-black w-screen">
-      <div className="mx-15 flex justify-center text-4xl">
+    <footer className="fixed bottom-0 bg-footer-1 w-screen">
+      <div className="mx-15 pt-2 flex justify-center text-3xl">
         <AiFillGithub className="text-white " />
         <BsStackOverflow className="mx-20 text-orange-500" />
         <AiFillLinkedin className="text-blue-600" />
