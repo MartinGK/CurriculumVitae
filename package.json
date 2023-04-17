@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "autoprefixer": "^10.4.14",
@@ -23,8 +25,10 @@
     "@types/react": "18.0.28",
     "eslint": "8.36.0",
     "eslint-config-next": "13.2.4",
+    "gh-pages": "^5.0.0",
     "prettier": "^2.8.7",
     "prettier-plugin-tailwindcss": "^0.2.7",
     "typescript": "5.0.2"
-  }
+  },
+  "homepage": "https://MartinGK.github.io/CurriculumVitae"
 }

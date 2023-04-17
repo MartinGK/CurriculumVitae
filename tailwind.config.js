@@ -15,10 +15,10 @@ module.exports = {
       colors: {
         primary: {
           1: "#F97316",
-        }, // Add a new primary color
+        }, 
         secondary: {
-          1: "#1F2937",
-        }, // Add a new secondary color
+          1: "#fdc500",
+        }, 
         background: {
           1: "#343541",
           2: "#343541",
@@ -29,6 +29,13 @@ module.exports = {
         footer: {
           1: "#000000",
         },
+        boca:{
+          1:"#00296b",
+          2:"#003f88",
+          3:"#00509d",
+          4:"#fdc500",
+          5:"#ffd500"
+        }
       },
     },
   },
