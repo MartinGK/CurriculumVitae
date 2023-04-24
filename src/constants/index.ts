@@ -100,3 +100,29 @@ export const experiences = [
     ],
   },
 ];
+
+export const NavOptions = {
+  SKILLS: "skills",
+  EXPERIENCES: "experiences",
+  CONTACT: "contact",
+  ABOUT_ME: "about me",
+};
+
+export const colors = {
+  red: "#f50537",
+  black: "#000000",
+  white: "#FFFFFF",
+  primary: {
+    1: "#1a1a1a",
+    2: "#333333",
+    3: "#4c4c4c",
+    4: "#666666",
+    5: "#808080",
+    6: "#999999",
+    7: "#b3b3b3",
+    8: "#cccccc",
+    9: "d9d9d9",
+    10: "#e5e5e5",
+    11: "f2f2f2",
+  },
+};

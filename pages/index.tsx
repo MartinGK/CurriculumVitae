@@ -1,10 +1,10 @@
 import Head from "next/head";
-import Footer from "components/Footer";
 import Skills from "components/Skills";
 import Experiences from "components/Experiences";
 import AboutMe from "components/AboutMe";
-import SideBar from "components/SideBar";
-import { SidebarOptionsProvider } from "contexts/SidebarOptions";
+import { SideBar } from "components/SideBar";
+import { SidebarOptionsProvider } from "contexts/SidebarOptionsContext";
+import Navbar from "components/Navbar";
 
 export default function Home() {
   return (
@@ -15,15 +15,15 @@ export default function Home() {
         <link rel="icon" href="/images/FotoPerfil.jpg" />
       </Head>
       <SidebarOptionsProvider>
-        <SideBar />
+        {/* <SideBar /> */}
 
-        <main className="flex justify-center bg-background-1 p-5 pb-28">
-          <Skills />
-          {/* <AboutMe />
-          <Experiences /> */}
+        <main className="bg-background-1 flex justify-center overflow-hidden">
+          <Skills/>
+          <AboutMe />
+          <Experiences />
         </main>
+        <Navbar />
       </SidebarOptionsProvider>
-      <Footer />
     </div>
   );
 }

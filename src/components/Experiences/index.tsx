@@ -1,9 +1,23 @@
 import Pill from "components/Pill";
-import { experiences } from "@constants";
+import { NavOptions, experiences } from "@constants";
+import { SidebarOptionsContext } from "contexts/SidebarOptionsContext";
+import { useContext } from "react";
+import { motion } from "framer-motion";
+import cx from "classnames";
 
 const Experiences = () => {
+  const { itemSelected } = useContext(SidebarOptionsContext);
+
   return (
-    <div className=" rounded bg-card-1 p-5 text-black">
+    <motion.div
+      className={cx("bg-card-1 rounded p-5 text-black", {
+        hidden: itemSelected !== NavOptions.EXPERIENCES,
+      })}
+      animate={{
+        opacity: itemSelected === NavOptions.EXPERIENCES ? 1 : 0,
+        x: itemSelected === NavOptions.EXPERIENCES ? 0 : 500,
+      }}
+    >
       <h1 className="text-3xl">Experiences</h1>
       <div className="mt-5 flex">
         <div className="w-full">
@@ -20,7 +34,7 @@ const Experiences = () => {
       </div>
 
       {/* Separar en porcentajes act (javascript) estilado y   */}
-    </div>
+    </motion.div>
   );
 };
 

@@ -1,17 +1,35 @@
 import Image from "next/image";
-import Stars from 'components/Stars'
-import { skills } from '@constants';
+import Stars from "components/Stars";
+import { skills } from "@constants";
+import { motion } from "framer-motion";
+import { useState, useContext } from "react";
+import { SidebarOptionsContext } from "contexts/SidebarOptionsContext";
+import { NavOptions } from "@constants";
+import cx from "classnames";
 
 const Skills = () => {
+  const { itemSelected } = useContext(SidebarOptionsContext);
+
   return (
-    <article className="flex flex-col items-center rounded bg-card-1 py-10 text-xl font-bold text-black">
+    <motion.article
+      className={cx(
+        "bg-card-1 flex w-full flex-col items-center rounded py-10 text-xl font-bold text-black",
+        {
+          hidden: itemSelected !== NavOptions.SKILLS,
+        }
+      )}
+      animate={{
+        opacity: itemSelected === NavOptions.SKILLS ? 1 : 0,
+        x: itemSelected === NavOptions.SKILLS ? 0 : 500,
+      }}
+    >
       <Image
         alt="Imagen pendiente"
         src="/images/FotoPerfil.jpg"
         width={200}
         height={200}
         quality={100}
-        className="rounded-full border-4 border-primary-1"
+        className="border-primary-1 rounded-full border-4"
       />
       <h2 className="text-2xl">Martin Gainza Koulaksezian</h2>
       <h3>ReactJS Developer</h3>
@@ -20,7 +38,7 @@ const Skills = () => {
           {skills.map((skill) => {
             return (
               <li className="flex " key={skill.skill}>
-                <span className="mr-10 flex w-72 justify-center bg-gray-200 px-5">
+                <span className="bg-grey-7 mr-10 flex w-72 justify-center px-5">
                   {skill.skill}
                 </span>
                 <div className="flex w-32">
@@ -31,7 +49,7 @@ const Skills = () => {
           })}
 
           <li className="flex ">
-            <span className="mr-10 flex w-72 items-center justify-center bg-gray-200 px-5">
+            <span className="bg-grey-10 mr-10 flex w-72 items-center justify-center px-5">
               English
             </span>
             <span className="text-bold flex w-32 text-base">
@@ -40,7 +58,7 @@ const Skills = () => {
           </li>
         </ul>
       </div>
-    </article>
+    </motion.article>
   );
 };
 

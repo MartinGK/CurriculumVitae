@@ -21,7 +21,7 @@ const Pill = ({ title, description, from, to }: TPill) => {
     <div
       onClick={handleShow}
       className={cx(
-        "bg-primary hover:bg-primary-600 focus:bg-primary-600 active:bg-primary-700 border-radius-transition mb-5 flex h-fit w-full cursor-pointer  items-center bg-secondary-1 pb-2  pr-6 pt-2.5 text-xs font-medium leading-normal text-black shadow-[0_4px_9px_-4px_#3b71ca] transition-all duration-75 ease-linear hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]",
+        "bg-primary-1 hover:bg-primary-6 focus:bg-primary-6 active:bg-primary-7 border-radius-transition mb-5 flex h-fit w-full cursor-pointer  items-center bg-secondary-1 pb-2  pr-6 pt-2.5 text-xs font-medium leading-normal text-black shadow-[0_4px_9px_-4px_#3b71ca] transition-all duration-75 ease-linear hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]",
         show ? "rounded-sm bg-secondary-1" : "rounded-3xl "
       )}
     >
