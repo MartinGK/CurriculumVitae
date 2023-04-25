@@ -8,7 +8,7 @@ import Navbar from "components/Navbar";
 
 export default function Home() {
   return (
-    <div>
+    <>
       <Head>
         <title>Martin GK</title>
         <meta name="description" content="Martin Gainza Koulaksezian CV" />
@@ -24,6 +24,6 @@ export default function Home() {
         </main>
         <Navbar />
       </SidebarOptionsProvider>
-    </div>
+    </>
   );
 }

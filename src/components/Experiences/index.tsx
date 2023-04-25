@@ -4,6 +4,7 @@ import { SidebarOptionsContext } from "contexts/SidebarOptionsContext";
 import { useContext } from "react";
 import { motion } from "framer-motion";
 import cx from "classnames";
+import ExperienceCard from "components/ExperienceCard";
 
 const Experiences = () => {
   const { itemSelected } = useContext(SidebarOptionsContext);
@@ -20,14 +21,12 @@ const Experiences = () => {
     >
       <h1 className="text-3xl">Experiences</h1>
       <div className="mt-5 flex">
-        <div className="w-full">
+        <div className="w-full grid gap-4">
           {experiences.map((exp) => (
-            <Pill
+            <ExperienceCard
               key={exp.title}
               title={exp.title}
               description={exp.description}
-              from={exp.from}
-              to={exp.to}
             />
           ))}
         </div>

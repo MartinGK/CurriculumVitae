@@ -5,14 +5,13 @@ module.exports = {
     // Or if using `src` directory:
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
-  theme: {
-    extend: {
-      grey: {
-      },
-    },
-  },
   plugins: [],
   theme: {
+    extend: {
+      colors: {
+        red: { DEFAULT: "#f50537", 123: "#f50537" },
+      },
+    },
     red: "#f50537",
     black: "#000000",
     green: "#00FF00",

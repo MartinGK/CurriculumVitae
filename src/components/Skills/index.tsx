@@ -13,7 +13,7 @@ const Skills = () => {
   return (
     <motion.article
       className={cx(
-        "bg-card-1 flex w-full flex-col items-center rounded py-10 text-xl font-bold text-black",
+        "bg-card-1 flex w-full flex-col items-center rounded py-10 text-xl font-bold text-white",
         {
           hidden: itemSelected !== NavOptions.SKILLS,
         }
@@ -29,12 +29,11 @@ const Skills = () => {
         width={200}
         height={200}
         quality={100}
-        className="border-primary-1 rounded-full border-4"
+        className="border-red  rounded-full border-4"
       />
       <h2 className="text-2xl">Martin Gainza Koulaksezian</h2>
-      <h3>ReactJS Developer</h3>
       <div>
-        <ul className="px-10 pt-4 font-normal">
+        <ul className="px-10 pt-6 font-normal">
           {skills.map((skill) => {
             return (
               <li className="flex " key={skill.skill}>

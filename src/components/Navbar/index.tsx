@@ -35,7 +35,13 @@ function BottomNav() {
   };
 
   return (
-    <BottomNavigation value={itemSelected} onChange={handleChange} classes={classes}>
+    <BottomNavigation
+      value={itemSelected}
+      onChange={handleChange}
+      classes={classes}
+      className="fixed bottom-0 w-full"
+      showLabels
+    >
       {itemSelected}
       <BottomNavigationAction
         label="Profile"

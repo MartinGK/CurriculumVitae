@@ -33,6 +33,13 @@ export const experiences = [
       "TailwindUI",
       "react-testing library",
     ],
+    tasks: [
+      "I selected the libraries to use based on weekly downloads, github stars, community behind and other metrics.",
+      "I created the architecture of the project, deciding the folder structure, the way to communicate between components, the way to handle the state, the way to handle the side effects, the way to handle the styles, the way to handle the tests.",
+      "I created the first components, the first pages, the first tests, the first styles.",
+      "I created the first documentation, the first storybook, the first design system.",
+      
+    ]
   },
   {
     title: "Daily turn based strategy gladiator game",
