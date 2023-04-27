@@ -4,7 +4,8 @@ import Experiences from "components/Experiences";
 import AboutMe from "components/AboutMe";
 import { SideBar } from "components/SideBar";
 import { SidebarOptionsProvider } from "contexts/SidebarOptionsContext";
-import Navbar from "components/Navbar";
+import BottomNav from "components/BottonNav";
+import Contact from "components/Contact";
 
 export default function Home() {
   return (
@@ -21,8 +22,9 @@ export default function Home() {
           <Skills/>
           <AboutMe />
           <Experiences />
+          <Contact />
         </main>
-        <Navbar />
+        <BottomNav />
       </SidebarOptionsProvider>
     </>
   );

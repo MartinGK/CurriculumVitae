@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Stars from "components/Stars";
 import { skills } from "@constants";
 import { motion } from "framer-motion";
@@ -6,6 +5,7 @@ import { useState, useContext } from "react";
 import { SidebarOptionsContext } from "contexts/SidebarOptionsContext";
 import { NavOptions } from "@constants";
 import cx from "classnames";
+import { Divider } from "@mui/material";
 
 const Skills = () => {
   const { itemSelected } = useContext(SidebarOptionsContext);
@@ -13,7 +13,7 @@ const Skills = () => {
   return (
     <motion.article
       className={cx(
-        "bg-card-1 flex w-full flex-col items-center rounded py-10 text-xl font-bold text-white",
+        "bg-card-1 flex w-full flex-col items-center rounded px-5 text-xl font-bold text-white",
         {
           hidden: itemSelected !== NavOptions.SKILLS,
         }
@@ -23,23 +23,16 @@ const Skills = () => {
         x: itemSelected === NavOptions.SKILLS ? 0 : 500,
       }}
     >
-      <Image
-        alt="Imagen pendiente"
-        src="/images/FotoPerfil.jpg"
-        width={200}
-        height={200}
-        quality={100}
-        className="border-red  rounded-full border-4"
-      />
-      <h2 className="text-2xl">Martin Gainza Koulaksezian</h2>
-      <div>
-        <ul className="px-10 pt-6 font-normal">
+    <div className="h-16 fixed py-5 bg-black w-full z-50">
+      <h1 className="border-b-1 border-red text-3xl px-5">Skills</h1>
+      <Divider className="fixed left-0 w-screen border-red py-1" />
+    </div>
+      <div className="my-20 ">
+        <ul className="pt-6 font-normal">
           {skills.map((skill) => {
             return (
               <li className="flex " key={skill.skill}>
-                <span className="bg-grey-7 mr-10 flex w-72 justify-center px-5">
-                  {skill.skill}
-                </span>
+                <span className="bg-grey-7 flex w-60 px-5">{skill.skill}</span>
                 <div className="flex w-32">
                   <Stars q={skill.q} />
                 </div>
@@ -48,7 +41,7 @@ const Skills = () => {
           })}
 
           <li className="flex ">
-            <span className="bg-grey-10 mr-10 flex w-72 items-center justify-center px-5">
+            <span className="bg-grey-10 flex w-60 items-center px-5">
               English
             </span>
             <span className="text-bold flex w-32 text-base">

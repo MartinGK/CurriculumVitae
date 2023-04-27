@@ -1,10 +1,7 @@
-import { experiences } from "@constants";
-import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
-import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
+import HighlightText from "components/HighlightText";
 
 type TExperienceCard = {
   title: string;
@@ -19,15 +16,12 @@ export default function ExperienceCard({
     <Card sx={{ minWidth: 275 }} className="bg-white bg-opacity-10">
       <CardContent>
         <Typography variant="h5" component="div" className="font-bold">
-          {title}
+          <HighlightText text={title} />
         </Typography>
         <Typography variant="body2" className="pt-2">
-          {description}
+          <HighlightText text={description} />
         </Typography>
       </CardContent>
-      <CardActions>
-        <Button size="small">Learn More</Button>
-      </CardActions>
     </Card>
   );
 }
