@@ -11,17 +11,8 @@ import React, { useContext } from "react";
 import { AiOutlineMail, AiOutlineSend } from "react-icons/ai";
 import cx from "classnames";
 import { SidebarOptionsContext } from "contexts/SidebarOptionsContext";
-import { NavOptions } from "@constants";
-import { purple } from "@mui/material/colors";
-
-const ColorButton = styled(Button)<ButtonProps>(({ theme }) => ({
-  color: theme.palette.getContrastText("#f50537"),
-  backgroundColor: "#f50537",
-  border: "1px solid #f50537",
-  "&:hover": {
-    backgroundColor: "transparent",
-  },
-}));
+import { NavOptions, navOptionsArray } from "@constants";
+import Highlight from "components/Highlight";
 
 export default function Contact() {
   const { itemSelected } = useContext(SidebarOptionsContext);
@@ -29,22 +20,30 @@ export default function Contact() {
   return (
     <motion.div
       className={cx("bg-card-1 flex flex-col rounded px-5 text-black", {
+        "!left-0": itemSelected === NavOptions.CONTACT,
         hidden: itemSelected !== NavOptions.CONTACT,
       })}
       animate={{
         opacity: itemSelected === NavOptions.CONTACT ? 1 : 0,
-        x: itemSelected === NavOptions.CONTACT ? 0 : 500,
+        x:
+          itemSelected === NavOptions.CONTACT
+            ? 0
+            : navOptionsArray.indexOf(itemSelected) >
+              navOptionsArray.indexOf(NavOptions.CONTACT)
+            ? -300
+            : 300,
       }}
+      transition={{ type: "tween", stiffness: 100, bounce: 0 }}
     >
       <div className="fixed z-50 h-16 w-full bg-black py-5">
         <h1 className="border-b-1 border-red text-3xl">Contact</h1>
-        <Divider className="fixed left-0 w-screen border-red py-1" />
       </div>
       <div className="my-20 px-5">
         <p className="pb-5 tracking-widest">
-          If you have any questions or have a challenge to present to me feel
-          free to get in touch at the email address or by sending me a message
-          below.
+          <Highlight>If you have</Highlight> any questions or have{" "}
+          <Highlight>a challenge</Highlight> to present to me feel free to{" "}
+          <Highlight>get in touch</Highlight> at the email address or by sending
+          me a message below.
         </p>
         <div className="flex w-full justify-between">
           <a

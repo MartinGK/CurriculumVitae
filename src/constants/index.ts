@@ -1,21 +1,19 @@
 export const skills = [
-  { skill: "ReactJS", q: 5 },
-  { skill: "NextJs", q: 5 },
-  { skill: "Redux", q: 5 },
-  { skill: "Testing Library", q: 5 },
-  { skill: "Javascript", q: 5 },
-  { skill: "CSS3", q: 5 },
-  { skill: "SASS", q: 5 },
-  { skill: "TailwindCSS", q: 5 },
-  { skill: "NodeJS", q: 4 },
-  { skill: "Express", q: 4 },
-  { skill: "MongoDB", q: 4 },
-  { skill: "Jest", q: 3 },
-  { skill: "Communication", q: 5 },
-  { skill: "Agile Methodology", q: 5 },
+  { text: "ReactJS", value: 5 },
+  { text: "NextJs", value: 5 },
+  { text: "Redux", value: 5 },
+  { text: "Testing Library", value: 5 },
+  { text: "Javascript", value: 5 },
+  { text: "CSS3", value: 5 },
+  { text: "SASS", value: 5 },
+  { text: "TailwindCSS", value: 5 },
+  { text: "NodeJS", value: 4 },
+  { text: "Express", value: 4 },
+  { text: "MongoDB", value: 4 },
+  { text: "Jest", value: 3 },
+  { text: "Communication", value: 5 },
+  { text: "Agile Methodology", value: 5 },
 ];
-
-export const birthDay = "09/05/1995";
 
 export const experiences = [
   {
@@ -125,11 +123,13 @@ export const experiences = [
 ];
 
 export const NavOptions = {
-  SKILLS: "skills",
-  EXPERIENCES: "experiences",
-  CONTACT: "contact",
   ABOUT_ME: "about me",
+  EXPERIENCES: "experiences",
+  SKILLS: "skills",
+  CONTACT: "contact",
 };
+
+export const navOptionsArray = Object.values(NavOptions);
 
 export const colors = {
   red: "#f50537",

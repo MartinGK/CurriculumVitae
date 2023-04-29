@@ -43,7 +43,7 @@ export const SideBar = () => {
       ref={containerRef}
       className="align-center fixed z-50 flex h-full w-12 flex-col bg-black"
     >
-      <motion.div className="background" variants={sidebar} />
+      <div className="background" variants={sidebar} />
       <MenuToggle toggle={() => toggleOpen()} />
       <Navigation />
       {/* <div className="flex h-10 w-full items-center justify-center border-b-2 border-primary-1"> */}

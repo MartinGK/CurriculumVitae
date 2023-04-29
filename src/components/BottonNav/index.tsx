@@ -1,4 +1,6 @@
-import React, { useContext, useState } from "react";
+'use client';
+
+import React, { useContext, useEffect } from "react";
 import { FaUser } from "react-icons/fa";
 import { MdWork } from "react-icons/md";
 import { GiSkills } from "react-icons/gi";
@@ -14,27 +16,20 @@ const useStyles = makeStyles((theme) => ({
     "&$selected": {
       color: colors.red,
     },
-    color: "white",
-  },
-  BottomNavigation: {
     color: colors.white,
-    width: "100%",
-    position: "fixed",
-    bottom: 0,
-    backgroundColor: colors.black,
   },
   selected: {},
 }));
 
 function BottomNav() {
-  const { itemSelected, setSelectedItem } = useContext(SidebarOptionsContext);
+  const { itemSelected, setItemSelected } = useContext(SidebarOptionsContext);
 
   const classes = useStyles();
 
   const handleChange = (event, newValue) => {
-    setSelectedItem(newValue);
+    setItemSelected(newValue);
   };
-
+  
   return (
     <BottomNavigation
       value={itemSelected}
@@ -43,7 +38,6 @@ function BottomNav() {
       className="fixed bottom-0 w-full bg-black text-white"
       showLabels
     >
-      {itemSelected}
       <BottomNavigationAction
         value={NavOptions.ABOUT_ME}
         classes={classes}
@@ -71,5 +65,13 @@ function BottomNav() {
     </BottomNavigation>
   );
 }
+
+BottomNav.getInitialProps = async () => {
+  // Generate the styles on the server
+  useStyles();
+
+  return {};
+};
+
 
 export default BottomNav;

@@ -1,4 +1,4 @@
-import theme from "components/utils/theme";
+import theme from "utils/theme";
 import "../styles/globals.css";
 import { ThemeProvider } from "@mui/material";
 

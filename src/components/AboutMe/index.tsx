@@ -1,8 +1,7 @@
 import Image from "next/image";
-import { NavOptions, birthDay } from "@constants";
+import { NavOptions, birthDay, navOptionsArray } from "@constants";
 import { SidebarOptionsContext } from "contexts/SidebarOptionsContext";
 import { motion } from "framer-motion";
-import { getYearsOld } from "helpers";
 import { useContext } from "react";
 import cx from "classnames";
 import { Divider } from "@mui/material";
@@ -13,22 +12,24 @@ export const AboutMe = () => {
 
   return (
     <motion.div
-      className={cx("bg-card-1 px-5 text-black", {
+      className={cx("bg-card-1 px-5 text-black fixed", {
+        '!left-0':itemSelected === NavOptions.ABOUT_ME,
         hidden: itemSelected !== NavOptions.ABOUT_ME,
       })}
       animate={{
         opacity: itemSelected === NavOptions.ABOUT_ME ? 1 : 0,
-        x: itemSelected === NavOptions.ABOUT_ME ? 0 : 500,
+        x: itemSelected === NavOptions.ABOUT_ME ? 0 :  navOptionsArray.indexOf(itemSelected) > navOptionsArray.indexOf(NavOptions.ABOUT_ME) ? -300 : 300,
       }}
+      transition={{ type: "tween", stiffness: 100, bounce:0 }}
     >
     <div className="fixed z-50 h-16 w-full bg-black py-5">
       <h1 className="border-b-1 border-red text-3xl">About me</h1>
-      <Divider className="fixed left-0 w-screen border-red py-1" />
     </div>
     <div className="my-20 px-5">
       <Image
         alt="Foto perfil"
         src="/images/FotoPerfil.jpg"
+        priority={true}
         width={200}
         height={200}
         quality={100}
@@ -37,9 +38,8 @@ export const AboutMe = () => {
       <div className="mt-5 flex justify-center">
         <div className="w-5/8">
           <p className="text-sm">
-            Hi! <Highlight>I&apos;m Martin</Highlight>, I&apos;m {getYearsOld(birthDay)} years old and
-            I&apos;m from Argentina. I&apos;m <Highlight>a experienced developer 
-            in ReactJS.</Highlight> I&apos;m passionate about
+            Hi! <Highlight>I&apos;m Martin</Highlight>, I&apos;m from Argentina. I&apos;m <Highlight>an 
+            experienced developer in ReactJS.</Highlight> I&apos;m passionate about
             technology and I&apos;m <Highlight>always looking for new challenges.</Highlight> When I
             had to take a fullstack profile I usually used the MERN combo.
              I&apos;m a goal-oriented team player who enjoys learning new tech
