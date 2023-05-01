@@ -10,7 +10,7 @@ const Experiences = () => {
 
   return (
     <motion.div
-      className={cx("bg-card-1  px-5 text-black", {
+      className={cx("bg-card-1  px-5 text-white bg-transaprent md:h-[40rem] overflow-scroll z-10", {
         "!left-0": itemSelected === NavOptions.EXPERIENCES,
         hidden: itemSelected !== NavOptions.EXPERIENCES,
       })}
@@ -26,11 +26,11 @@ const Experiences = () => {
       }}
       transition={{ type: "tween", stiffness: 100, bounce: 0 }}
     >
-      <div className="fixed z-50 h-16 w-full bg-black py-5">
+      <div className="fixed z-50 h-16 w-full bg-black py-5 md:hidden">
         <h1 className="border-b-1 border-red text-3xl">Experiences</h1>
       </div>
       <div className="my-20 flex px-5">
-        <div className="grid w-full gap-4">
+        <div className="grid w-full gap-4 overflow-auto md:grid-cols-2">
           {experiences.map((exp) => (
             <ExperienceCard
               key={exp.title}

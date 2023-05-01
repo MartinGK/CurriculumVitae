@@ -26,8 +26,8 @@ export default function Home() {
         <link rel="icon" href="/images/FotoPerfil.jpg" />
       </Head>
 
-      <div className="fixed z-50 h-16 w-full bg-transparent py-14">
-        <Divider className="fixed left-0 w-screen border-red py-1" />
+      <div className="fixed z-50 h-16 w-full bg-transparent py-14 md:hidden">
+        <Divider className="fixed left-0 w-full border-red py-1" />
       </div>
       <SidebarOptionsProvider>
         {/* <SideBar /> */}

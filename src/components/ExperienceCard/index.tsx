@@ -13,12 +13,12 @@ export default function ExperienceCard({
   description,
 }: TExperienceCard) {
   return (
-    <Card sx={{ minWidth: 275 }} className="bg-white bg-opacity-10">
+    <Card sx={{ minWidth: 275 }} className="bg-white bg-opacity-10 md:h-[22rem] md:min-w-24">
       <CardContent>
-        <Typography variant="h5" component="div" className="font-bold">
+        <Typography variant="h5" component="div" className="font-bold md:text-2xl md:min-h-[4rem]">
           <HighlightText text={title} />
         </Typography>
-        <Typography variant="body2" className="pt-2">
+        <Typography variant="body2" className="pt-2 md:text-xl">
           <HighlightText text={description} />
         </Typography>
       </CardContent>

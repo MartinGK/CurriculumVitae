@@ -13,7 +13,7 @@ const Skills = () => {
   return (
     <motion.article
       className={cx(
-        "bg-card-1 flex w-full flex-col items-center rounded px-5 text-xl font-bold text-white",
+        "bg-card-1 flex w-full flex-col items-center rounded px-5 text-xl font-bold text-white bg-transparent md:h-[40rem] z-10",
         {
           "!left-0": itemSelected === NavOptions.SKILLS,
           hidden: itemSelected !== NavOptions.SKILLS,
@@ -31,34 +31,10 @@ const Skills = () => {
       }}
       transition={{ type: "tween", stiffness: 100, bounce: 0 }}
     >
-      <div className="fixed z-50 h-16 w-full bg-black py-5">
+      <div className="fixed z-50 h-16 w-full bg-black py-5 md:hidden">
         <h1 className="border-b-1 border-red px-5 text-3xl">Skills</h1>
       </div>
-
-      {/* <div className="my-20 ">
-        <ul className="pt-6 font-normal">
-          {skills.map((skill) => {
-            return (
-              <li className="flex " key={skill.text}>
-                <span className="bg-grey-7 flex w-60 px-5">{skill.text}</span>
-                <div className="flex w-32">
-                  <Stars q={skill.value} />
-                </div>
-              </li>
-            );
-          })}
-
-          <li className="flex ">
-            <span className="bg-grey-10 flex w-60 items-center px-5">
-              English
-            </span>
-            <span className="text-bold flex w-32 text-base">
-              Upper-Intermediate
-            </span>
-          </li>
-        </ul>
-      </div> */}
-      <div className="w-full pt-20 pl-4 grid grid-cols-2 pb-20">
+      <div className="w-full pt-20 pl-4 grid grid-cols-2 md:grid-cols-3 pb-20 md:py-5">
         {Object.keys(skillsByGroup).map((group) => {
           return (
             <ul className="flex text-base w-full" key={group}>
