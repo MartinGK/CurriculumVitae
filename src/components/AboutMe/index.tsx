@@ -1,10 +1,9 @@
 import Image from "next/image";
-import { NavOptions, birthDay, navOptionsArray } from "@constants";
+import { NavOptions, navOptionsArray } from "@constants";
 import { SidebarOptionsContext } from "contexts/SidebarOptionsContext";
 import { motion } from "framer-motion";
 import { useContext } from "react";
 import cx from "classnames";
-import { Divider } from "@mui/material";
 import Highlight from "components/Highlight";
 
 export const AboutMe = () => {
@@ -25,7 +24,7 @@ export const AboutMe = () => {
     <div className="fixed z-50 h-16 w-full bg-black py-5">
       <h1 className="border-b-1 border-red text-3xl">About me</h1>
     </div>
-    <div className="my-20 px-5">
+    <div className="my-24 px-5">
       <Image
         alt="Foto perfil"
         src="/images/FotoPerfil.jpg"
@@ -33,7 +32,7 @@ export const AboutMe = () => {
         width={200}
         height={200}
         quality={100}
-        className="rounded-full border-4 border-red mx-auto mb-5"
+        className="rounded-full border-4 border-red mx-auto mb-8"
       />
       <div className="mt-5 flex justify-center">
         <div className="w-5/8">

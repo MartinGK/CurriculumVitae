@@ -1,20 +1,11 @@
-import Stars from "components/Stars";
-import { navOptionsArray, skills } from "@constants";
+import { navOptionsArray, skillsByGroup } from "@constants";
 import { motion } from "framer-motion";
-import { useContext, lazy, Suspense } from "react";
+import { useContext, } from "react";
 import { SidebarOptionsContext } from "contexts/SidebarOptionsContext";
 import { NavOptions } from "@constants";
 import cx from "classnames";
-import {
-  Divider,
-  List,
-  ListItem,
-  ListItemButton,
-  ListItemText,
-} from "@mui/material";
-import Highlight from "components/Highlight";
-
-const Wordcloud = lazy(() => import("components/WordCloud"));
+import { MdCircle } from "react-icons/md";
+import { RxCircle } from "react-icons/rx";
 
 const Skills = () => {
   const { itemSelected } = useContext(SidebarOptionsContext);
@@ -44,39 +35,7 @@ const Skills = () => {
         <h1 className="border-b-1 border-red px-5 text-3xl">Skills</h1>
       </div>
 
-      <nav aria-label="secondary mailbox folders" className="w-full pt-20">
-        <p>
-          You can navigate through <Highlight>my stack of skills.</Highlight>
-        </p>
-        <List>
-          <ListItem disablePadding>
-            <ListItemButton>
-              <ListItemText primary="Frontend" color="primary" />
-            </ListItemButton>
-          </ListItem>
-          <ListItem disablePadding>
-            <ListItemButton>
-              <ListItemText primary="Backend" />
-            </ListItemButton>
-          </ListItem>
-          <ListItem disablePadding>
-            <ListItemButton>
-              <ListItemText primary="Soft skills" />
-            </ListItemButton>
-          </ListItem>
-          <ListItem disablePadding>
-            <ListItemButton>
-              <ListItemText primary="Testing" />
-            </ListItemButton>
-          </ListItem>
-        </List>
-      </nav>
-
-      <Suspense fallback={<div>Loading...</div>}>
-        <Wordcloud />
-      </Suspense>
-{/* 
-      <div className="my-20 ">
+      {/* <div className="my-20 ">
         <ul className="pt-6 font-normal">
           {skills.map((skill) => {
             return (
@@ -99,6 +58,29 @@ const Skills = () => {
           </li>
         </ul>
       </div> */}
+      <div className="w-full pt-20 pl-4 grid grid-cols-2 pb-20">
+        {Object.keys(skillsByGroup).map((group) => {
+          return (
+            <ul className="flex text-base w-full" key={group}>
+              <li className="flex flex-col w-full pt-4">
+                <span className="flex  items-center w-full">
+                  <MdCircle className="h-3 w-3 text-red mr-2" />
+                  {group}
+                </span>
+                <ul>
+                  {skillsByGroup[group].map((skill) => {
+                    return (
+                      <li className="flex items-center pl-5" key={skill}>
+                        <RxCircle className="h-2 w-2 text-red mr-2" /> {skill.name}
+                      </li>
+                    );
+                  })}
+                </ul>
+              </li>
+            </ul>
+          );
+        })}
+      </div>
     </motion.article>
   );
 };
