@@ -10,6 +10,10 @@ import { makeStyles } from "@mui/styles";
 import { colors, NavOptions } from "@constants";
 import { SidebarOptionsContext } from "contexts/SidebarOptionsContext";
 
+
+function BottomNav() {
+  const { itemSelected, setItemSelected } = useContext(SidebarOptionsContext);
+
 const useStyles = makeStyles((theme) => ({
   root: {
     backgroundColor: colors.black,
@@ -22,9 +26,6 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const classes = useStyles();
-
-function BottomNav() {
-  const { itemSelected, setItemSelected } = useContext(SidebarOptionsContext);
 
 
   const handleChange = (event, newValue) => {
