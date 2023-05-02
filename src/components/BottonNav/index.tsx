@@ -21,10 +21,11 @@ const useStyles = makeStyles((theme) => ({
   selected: {},
 }));
 
+const classes = useStyles();
+
 function BottomNav() {
   const { itemSelected, setItemSelected } = useContext(SidebarOptionsContext);
 
-  const classes = useStyles();
 
   const handleChange = (event, newValue) => {
     setItemSelected(newValue);
