@@ -26,6 +26,7 @@ export default function ContactBox() {
     event.preventDefault();
     const formData = new FormData(event.target as HTMLFormElement);
     const data = Object.fromEntries(formData.entries());
+    console.log(data)
     mutate(data as any);
   };
 
