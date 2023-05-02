@@ -8,13 +8,11 @@ import TopNav from "components/TopNav";
 import { SidebarOptionsContext } from "contexts/SidebarOptionsContext";
 import React, { useContext, useEffect, useRef } from "react";
 import { useSwipeable } from "react-swipeable";
-import { makeStyles } from "@mui/styles";
-
 
 export default function Main() {
   const { onSwipedRight, onSwipedLeft } = useContext(SidebarOptionsContext);
   const { itemSelected } = useContext(SidebarOptionsContext);
-  const mainRef = useRef(null)
+  const mainRef = useRef(null);
 
   const handlers = useSwipeable({
     onSwipedLeft,
@@ -31,8 +29,8 @@ export default function Main() {
   return (
     <>
       <div className="h-18 !fixed z-20 w-full bg-black pt-6 md:!hidden">
-        <h1 className="pl-8 text-3xl">{itemSelected}</h1>
-        <Divider className="left-0 w-full mt-2" color={colors.red}/>
+        <h1 className="pl-8 text-3xl pb-2">{itemSelected}</h1>
+        <Divider className="left-0 w-full" color={colors.red}/>
       </div>
       <div
         className="absolute h-screen overflow-scroll bg-black md:relative md:bg-[#1a1a1a]"

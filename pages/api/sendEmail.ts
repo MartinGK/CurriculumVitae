@@ -13,7 +13,7 @@ const transporter = nodemailer.createTransport(
 
 export default function handler(req: NextApiRequest , res: NextApiResponse) {
 
-    const { firstName, secondName, email, message } = req.body;
+  const { firstName, secondName, email, message } = req.body;
   const mailOptions = {
     from: "mrtgeka@gmail.com",
     to: "MartinKoulak@outlook.com",
@@ -23,10 +23,8 @@ export default function handler(req: NextApiRequest , res: NextApiResponse) {
 
   transporter.sendMail(mailOptions, function (error: Error, info: InformationEvent) {
     if (error) {
-      console.log(error);
       res.status(400).json("Error");
     } else {
-      console.log(info);
       res.status(200).json("Correo electrónico enviado: " + info);
     }
   });

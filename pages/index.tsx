@@ -2,11 +2,10 @@
 
 import Head from "next/head";
 import BottomNav from "components/BottonNav";
-import {  NoSsr } from "@mui/material";
+import { NoSsr } from "@mui/material";
 import Main from "components/Main";
 
 export default function Home() {
-  
   return (
     <>
       <Head>

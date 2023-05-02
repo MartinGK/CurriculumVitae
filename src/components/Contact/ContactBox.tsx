@@ -40,7 +40,7 @@ export default function ContactBox() {
 
   return (
     <form
-      className={`grid flex-col gap-5 rounded-lg px-2 py-5 !shadow-[0_0_10px_1px_#f50537] md:mx-auto md:max-w-lg`}
+      className={"grid flex-col gap-5 rounded-lg px-2 py-5 !shadow-[0_0_10px_1px_#f50537] md:mx-auto md:max-w-lg"}
       onSubmit={handleSendMessage}
     >
       <h3>Contact me</h3>

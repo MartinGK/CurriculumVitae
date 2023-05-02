@@ -26,8 +26,8 @@ const Skills = () => {
             ? 0
             : navOptionsArray.indexOf(itemSelected) >
               navOptionsArray.indexOf(NavOptions.SKILLS)
-            ? -300
-            : 300,
+              ? -300
+              : 300,
       }}
       transition={{ type: "tween", stiffness: 100, bounce: 0 }}
     >

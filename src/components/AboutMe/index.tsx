@@ -28,8 +28,8 @@ export const AboutMe = () => {
             ? 0
             : navOptionsArray.indexOf(itemSelected) >
               navOptionsArray.indexOf(NavOptions.ABOUT_ME)
-            ? -300
-            : 300,
+              ? -300
+              : 300,
       }}
       transition={{ type: "tween", stiffness: 100, bounce: 0 }}
     >
