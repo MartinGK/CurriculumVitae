@@ -3,7 +3,7 @@ import { ThemeProvider } from "@mui/material";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { SidebarOptionsProvider } from "contexts/SidebarOptionsContext";
 import { ToastContainer } from "react-toastify";
-import { Analytics } from'@vercel/analytics/react';
+import { Analytics } from "@vercel/analytics/react";
 import "react-toastify/dist/ReactToastify.css";
 import "../styles/tailwind.css";
 import "../styles/globals.css";

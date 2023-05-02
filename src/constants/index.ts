@@ -191,3 +191,5 @@ export const colors = {
     11: "f2f2f2",
   },
 };
+
+export const aboutMe = "Hi! I'm Martin, I'm from Argentina. I'm an experienced developer in ReactJS.I'm passionate about technology and I'malways looking for new challenges. When Ihad to take a fullstack profile I usually used the MERN combo.I'm a goal-oriented team player who enjoys learning newtech skills and keeping my team and myself up to date with thelatest trends. I love working in teams and I believe I have theright set of soft skills to balance my technical skills andbring value to the projects I'm entrusted with.";
