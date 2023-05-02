@@ -1,6 +1,6 @@
 import theme from "utils/theme";
 import "react-toastify/dist/ReactToastify.css";
-import "../public/tailwind.css";
+import "../styles/tailwind.css";
 import "../styles/globals.css";
 import { ThemeProvider } from "@mui/material";
 import { QueryClient, QueryClientProvider } from "react-query";
