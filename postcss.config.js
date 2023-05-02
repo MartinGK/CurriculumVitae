@@ -1,6 +1,13 @@
 module.exports = {
-    plugins: {
-      tailwindcss: {},
-      autoprefixer: {},
-    },
-  };
+  plugins: [
+    "postcss-flexbugs-fixes",
+    "postcss-preset-env",
+    [
+      "tailwindcss",
+      {
+        // Agrega otras opciones de configuración de Tailwind aquí
+        content: ["./src/**/*.{js,jsx,ts,tsx}", "./pages/**/*.{js,jsx,ts,tsx}"],
+      },
+    ],
+  ],
+};

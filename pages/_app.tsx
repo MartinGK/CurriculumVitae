@@ -1,4 +1,5 @@
 import theme from "utils/theme";
+import "../public/tailwind.css";
 import "../styles/globals.css";
 import { ThemeProvider } from "@mui/material";
 import { QueryClient, QueryClientProvider } from "react-query";
