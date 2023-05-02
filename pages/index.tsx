@@ -6,8 +6,6 @@ import BottomNav from "components/BottonNav";
 import { Divider, NoSsr } from "@mui/material";
 import Main from "components/Main";
 import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import "../public/tailwind.css";
 
 export default function Home() {
   return (
