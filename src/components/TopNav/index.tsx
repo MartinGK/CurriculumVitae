@@ -10,37 +10,60 @@ import { makeStyles } from "@mui/styles";
 import { colors, NavOptions } from "@constants";
 import { SidebarOptionsContext } from "contexts/SidebarOptionsContext";
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    backgroundColor: colors.black,
-    flexDirection: "row",
-    borderBottomWidth: "0px",
-    borderBottom: "3px solid transparent",
-    // borderColor: "transparent",
-    borderTopLeftRadius:"0.5rem",
-    borderTopRightRadius:"0.5rem",
-    width:'35rem',
-    "&$selected": {
-      color: colors.red,
-      borderColor: colors.red,
-      borderBottom: "3px solid",
-      width: "fit-content",
-      transition: "border-color 1s cubic-bezier(0.22, 0.61, 0.36, 1)",
-    },
-    "& svg": {
-      marginRight: "0.5rem",
-    },
-    color: colors.white,
-  },
-  selected: {},
-}));
 
-const classes = useStyles();
 
 
 function TopNav() {
   const { itemSelected, setItemSelected } = useContext(SidebarOptionsContext);
+const useStyles = makeStyles((theme) => ({
 
+  root: {
+
+    backgroundColor: colors.black,
+
+    flexDirection: "row",
+
+    borderBottomWidth: "0px",
+
+    borderBottom: "3px solid transparent",
+
+    // borderColor: "transparent",
+
+    borderTopLeftRadius:"0.5rem",
+
+    borderTopRightRadius:"0.5rem",
+
+    width:'35rem',
+
+    "&$selected": {
+
+      color: colors.red,
+
+      borderColor: colors.red,
+
+      borderBottom: "3px solid",
+
+      width: "fit-content",
+
+      transition: "border-color 1s cubic-bezier(0.22, 0.61, 0.36, 1)",
+
+    },
+
+    "& svg": {
+
+      marginRight: "0.5rem",
+
+    },
+
+    color: colors.white,
+
+  },
+
+  selected: {},
+
+}));
+
+const classes = useStyles();
 
   const handleChange = (event, newValue) => {
     setItemSelected(newValue);
