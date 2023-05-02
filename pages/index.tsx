@@ -4,7 +4,7 @@ import Head from "next/head";
 import Skills from "components/Skills";
 import Experiences from "components/Experiences";
 import AboutMe from "components/AboutMe";
-import { SideBar } from "components/SideBar";
+
 import {
   SidebarOptionsContext,
   SidebarOptionsProvider,
