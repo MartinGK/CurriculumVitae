@@ -165,10 +165,10 @@ export const experiences = [
 ];
 
 export const NavOptions = {
-  ABOUT_ME: "about me",
-  EXPERIENCES: "experiences",
-  SKILLS: "skills",
-  CONTACT: "contact",
+  ABOUT_ME: "About me",
+  EXPERIENCES: "Experiences",
+  SKILLS: "Skills",
+  CONTACT: "Contact",
 };
 
 export const navOptionsArray = Object.values(NavOptions);

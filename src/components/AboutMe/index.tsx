@@ -33,9 +33,6 @@ export const AboutMe = () => {
       }}
       transition={{ type: "tween", stiffness: 100, bounce: 0 }}
     >
-      <div className="fixed z-50 h-16 w-full bg-black py-5 md:hidden ">
-        <h1 className="border-b-1 border-red text-3xl">About me</h1>
-      </div>
       <div className="overflow-auto px-5 pt-24 md:flex md:px-5 w-full md:pt-16">
         <div className="md:w-1/4">
           <Image
@@ -66,7 +63,7 @@ export const AboutMe = () => {
             </Link>
           </div>
         </div>
-        <div className="flex flex-col md:w-3/4 md:pt-7 md:px-5">
+        <div className="flex flex-col md:w-3/4 md:px-5">
           <div className="flex justify-center pt-5 md:px-5">
             <div className="w-5/8">
               <p className="text-base md:text-xl">

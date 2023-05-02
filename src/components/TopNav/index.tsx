@@ -53,7 +53,7 @@ function TopNav() {
     >
       <BottomNavigationAction
         value={NavOptions.ABOUT_ME}
-        label={"About me"}
+        label={NavOptions.ABOUT_ME}
         showLabel={itemSelected !== NavOptions.ABOUT_ME}
         classes={classes}
         color="white"
@@ -61,7 +61,7 @@ function TopNav() {
       />
       <BottomNavigationAction
         value={NavOptions.EXPERIENCES}
-        label={"Experiences"}
+        label={NavOptions.EXPERIENCES}
         showLabel={itemSelected !== NavOptions.EXPERIENCES}
         classes={classes}
         color="white"
@@ -69,7 +69,7 @@ function TopNav() {
       />
       <BottomNavigationAction
         value={NavOptions.SKILLS}
-        label={"Skills"}
+        label={NavOptions.SKILLS}
         showLabel={itemSelected !== NavOptions.SKILLS}
         classes={classes}
         color="white"
@@ -77,7 +77,7 @@ function TopNav() {
       />
       <BottomNavigationAction
         value={NavOptions.CONTACT}
-        label={"Contact"}
+        label={NavOptions.CONTACT}
         showLabel={itemSelected !== NavOptions.CONTACT}
         classes={classes}
         color="white"

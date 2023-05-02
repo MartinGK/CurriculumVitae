@@ -31,9 +31,6 @@ const Skills = () => {
       }}
       transition={{ type: "tween", stiffness: 100, bounce: 0 }}
     >
-      <div className="fixed z-50 h-16 w-full bg-black py-5 md:hidden">
-        <h1 className="border-b-1 border-red px-5 text-3xl">Skills</h1>
-      </div>
       <div className="w-full pt-20 pl-4 grid grid-cols-2 md:grid-cols-3 pb-20 md:py-5">
         {Object.keys(skillsByGroup).map((group) => {
           return (

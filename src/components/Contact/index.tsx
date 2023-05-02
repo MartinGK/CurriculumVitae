@@ -12,10 +12,13 @@ export default function Contact() {
 
   return (
     <motion.div
-      className={cx("bg-card-1 flex flex-col rounded px-5 text-white bg-transparent md:h-[40rem] overflow-auto md:py-5 z-10", {
-        "!left-0": itemSelected === NavOptions.CONTACT,
-        hidden: itemSelected !== NavOptions.CONTACT,
-      })}
+      className={cx(
+        "bg-card-1 z-10 flex flex-col overflow-auto rounded bg-transparent px-5 text-white md:h-[40rem] md:py-5",
+        {
+          "!left-0": itemSelected === NavOptions.CONTACT,
+          hidden: itemSelected !== NavOptions.CONTACT,
+        }
+      )}
       animate={{
         opacity: itemSelected === NavOptions.CONTACT ? 1 : 0,
         x:
@@ -28,9 +31,6 @@ export default function Contact() {
       }}
       transition={{ type: "tween", stiffness: 100, bounce: 0 }}
     >
-      <div className="fixed z-50 h-16 w-full bg-black py-5 md:hidden">
-        <h1 className="border-b-1 border-red text-3xl">Contact</h1>
-      </div>
       <div className="my-20 px-5 md:my-0 md:py-5">
         <p className="pb-5 tracking-widest">
           <Highlight>If you have</Highlight> any questions or have{" "}
