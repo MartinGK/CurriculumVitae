@@ -12,6 +12,7 @@ export default function Home() {
       <Head>
         <title>Martin GK</title>
         <meta name="description" content="Martin Gainza Koulaksezian CV" />
+        <meta name="google" content="notranslate" />
         <link rel="icon" href="/images/icon.jpg" />
       </Head>
       <Main />

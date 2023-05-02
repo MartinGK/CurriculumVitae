@@ -28,6 +28,7 @@ export default function ContactBox() {
       toast(<span className="text-white">Please fill all the fields!</span>);
       return;
     }
+    //eslint-disable-next-line
     mutate(data as any);
   };
 

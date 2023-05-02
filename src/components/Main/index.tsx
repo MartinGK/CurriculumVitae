@@ -1,3 +1,4 @@
+import { colors } from "@constants";
 import { Divider, NoSsr } from "@mui/material";
 import AboutMe from "components/AboutMe";
 import Contact from "components/Contact";
@@ -5,12 +6,20 @@ import Experiences from "components/Experiences";
 import Skills from "components/Skills";
 import TopNav from "components/TopNav";
 import { SidebarOptionsContext } from "contexts/SidebarOptionsContext";
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { useSwipeable } from "react-swipeable";
+import { makeStyles } from "@mui/styles";
+
+const useStyles = makeStyles(() => ({
+  root: {
+    borderColor: colors.red,
+  },
+}));
 
 export default function Main() {
   const { onSwipedRight, onSwipedLeft } = useContext(SidebarOptionsContext);
   const { itemSelected } = useContext(SidebarOptionsContext);
+  const classes = useStyles();
 
   const handlers = useSwipeable({
     onSwipedLeft,
@@ -20,13 +29,15 @@ export default function Main() {
     swipeDuration: 2000,
   });
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [itemSelected]);
+
   return (
     <>
-      <div className="!fixed z-20 h-18 w-full bg-black pt-6 md:!hidden">
-        <h1 className="border-b-1 pl-8 border-red text-3xl">
-          {itemSelected}
-        </h1>
-        <Divider className="left-0 w-full border-red py-1" />
+      <div className="h-18 !fixed z-20 w-full bg-black pt-6 md:!hidden">
+        <h1 className="pl-8 text-3xl">{itemSelected}</h1>
+        <Divider className="left-0 w-full !border-red py-1" classes={classes} />
       </div>
       <div
         className="absolute h-screen overflow-scroll bg-black md:relative md:bg-[#1a1a1a]"
