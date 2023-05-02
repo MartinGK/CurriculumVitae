@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import React, { useContext, useEffect } from "react";
 import { FaUser } from "react-icons/fa";
@@ -9,10 +9,6 @@ import { BottomNavigation, BottomNavigationAction } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import { colors, NavOptions } from "@constants";
 import { SidebarOptionsContext } from "contexts/SidebarOptionsContext";
-
-
-function BottomNav() {
-  const { itemSelected, setItemSelected } = useContext(SidebarOptionsContext);
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -25,19 +21,21 @@ const useStyles = makeStyles((theme) => ({
   selected: {},
 }));
 
-const classes = useStyles();
+function BottomNav() {
+  const { itemSelected, setItemSelected } = useContext(SidebarOptionsContext);
 
+  const classes = useStyles();
 
   const handleChange = (event, newValue) => {
     setItemSelected(newValue);
   };
-  
+
   return (
     <BottomNavigation
       value={itemSelected}
       onChange={handleChange}
       classes={classes}
-      className="fixed bottom-0 w-full bg-black text-white md:hidden z-10"
+      className="fixed bottom-0 z-10 w-full bg-black text-white md:hidden"
       showLabels
     >
       <BottomNavigationAction
@@ -67,9 +65,5 @@ const classes = useStyles();
     </BottomNavigation>
   );
 }
-
-
-
-
 
 export default BottomNav;
