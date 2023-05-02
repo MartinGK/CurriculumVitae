@@ -1,18 +1,19 @@
-import { IconButton, TextField } from "@mui/material";
+import { CircularProgress, IconButton, TextField } from "@mui/material";
 import React, { useEffect } from "react";
 import { AiOutlineSend } from "react-icons/ai";
 import { useMutation } from "react-query";
 import { toast } from "react-toastify";
 
 export default function ContactBox() {
-  const { mutate, isSuccess, isError } = useMutation<void>((formData) =>
-    fetch("/api/sendEmail", {
-      method: "POST",
-      body: JSON.stringify(formData),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    }).then((res) => res.json())
+  const { mutate, isSuccess, isLoading, isError } = useMutation<void>(
+    (formData) =>
+      fetch("/api/sendEmail", {
+        method: "POST",
+        body: JSON.stringify(formData),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }).then((res) => res.json())
   );
 
   const handleSendMessage = (event: React.FormEvent<HTMLFormElement>): void => {
@@ -40,7 +41,9 @@ export default function ContactBox() {
 
   return (
     <form
-      className={"grid flex-col gap-5 rounded-lg px-2 py-5 !shadow-[0_0_10px_1px_#f50537] md:mx-auto md:max-w-lg"}
+      className={
+        "grid flex-col gap-5 rounded-lg px-2 py-5 !shadow-[0_0_10px_1px_#f50537] md:mx-auto md:max-w-lg"
+      }
       onSubmit={handleSendMessage}
     >
       <h3>Contact me</h3>
@@ -83,7 +86,11 @@ export default function ContactBox() {
         className="w-fit justify-self-end"
         type="submit"
       >
-        <AiOutlineSend className="ml-2 h-7 w-7 text-red" />
+        {isLoading ? (
+          <CircularProgress size={24} className="text-red" />
+        ) : (
+          <AiOutlineSend size={24} className="ml-2 h-8 w-8 text-red" />
+        )}
       </IconButton>
     </form>
   );
