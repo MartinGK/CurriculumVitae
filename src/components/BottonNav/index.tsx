@@ -10,6 +10,10 @@ import { makeStyles } from "@mui/styles";
 import { colors, NavOptions } from "@constants";
 import { SidebarOptionsContext } from "contexts/SidebarOptionsContext";
 
+
+function BottomNav() {
+  const { itemSelected, setItemSelected } = useContext(SidebarOptionsContext);
+
 const useStyles = makeStyles((theme) => ({
   root: {
     backgroundColor: colors.black,
@@ -21,10 +25,8 @@ const useStyles = makeStyles((theme) => ({
   selected: {},
 }));
 
-function BottomNav() {
-  const { itemSelected, setItemSelected } = useContext(SidebarOptionsContext);
+const classes = useStyles();
 
-  const classes = useStyles();
 
   const handleChange = (event, newValue) => {
     setItemSelected(newValue);
@@ -66,12 +68,8 @@ function BottomNav() {
   );
 }
 
-BottomNav.getInitialProps = async () => {
-  // Generate the styles on the server
-  useStyles();
 
-  return {};
-};
+
 
 
 export default BottomNav;
