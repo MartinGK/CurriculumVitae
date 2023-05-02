@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "rm -rf .next && next build",
+    "rebuild": "rm -rf .next && next build && next start",
     "start": "next start",
     "lint": "next lint",
     "predeploy": "npm run build",

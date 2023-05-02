@@ -3,7 +3,7 @@ import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import HighlightText from "components/HighlightText";
 
-type TExperienceCard = {
+type TexperienceCard = {
   title: string;
   description: string;
 };
@@ -11,9 +11,9 @@ type TExperienceCard = {
 export default function ExperienceCard({
   title,
   description,
-}: TExperienceCard) {
+}: TexperienceCard) {
   return (
-    <Card sx={{ minWidth: 275 }} className="bg-white bg-opacity-10 md:h-[22rem] md:min-w-24">
+    <Card sx={{ minWidth: 275 }} className="!bg-white !bg-opacity-10 md:h-[22rem] md:min-w-24">
       <CardContent>
         <Typography variant="h5" component="div" className="font-bold md:text-2xl md:min-h-[4rem]">
           <HighlightText text={title} />

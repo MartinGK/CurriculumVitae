@@ -23,10 +23,9 @@ const useStyles = makeStyles(() => ({
 
 function BottomNav() {
   const { itemSelected, setItemSelected } = useContext(SidebarOptionsContext);
-
   const classes = useStyles();
 
-  const handleChange = (event, newValue) => {
+  const handleChange = (_, newValue) => {
     setItemSelected(newValue);
   };
 
@@ -35,7 +34,7 @@ function BottomNav() {
       value={itemSelected}
       onChange={handleChange}
       classes={classes}
-      className="fixed bottom-0 z-10 w-full bg-black text-white md:hidden"
+      className="!fixed bottom-0 z-10 w-full bg-black text-white md:!hidden"
       showLabels
     >
       <BottomNavigationAction

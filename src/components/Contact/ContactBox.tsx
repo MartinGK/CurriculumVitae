@@ -4,15 +4,8 @@ import { AiOutlineSend } from "react-icons/ai";
 import { useMutation } from "react-query";
 import { toast } from "react-toastify";
 
-interface EmailFormValues {
-  firstName: string;
-  secondName: string;
-  email: string;
-  message: string;
-}
-
 export default function ContactBox() {
-  const { mutate, isSuccess, isError } = useMutation<Response>((formData) =>
+  const { mutate, isSuccess, isError } = useMutation<void>((formData) =>
     fetch("/api/sendEmail", {
       method: "POST",
       body: JSON.stringify(formData),
@@ -22,22 +15,31 @@ export default function ContactBox() {
     }).then((res) => res.json())
   );
 
-  const handleSendMessage = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSendMessage = (event: React.FormEvent<HTMLFormElement>): void => {
     event.preventDefault();
     const formData = new FormData(event.target as HTMLFormElement);
     const data = Object.fromEntries(formData.entries());
-    console.log(data)
+    if (
+      data["firstName"] === "" ||
+      data["secondName"] === "" ||
+      data["email"] === "" ||
+      data["message"] === ""
+    ) {
+      toast(<span className="text-white">Please fill all the fields!</span>);
+      return;
+    }
     mutate(data as any);
   };
 
   useEffect(() => {
     if (isSuccess) toast(<span className="text-white">Message sent!</span>);
-    if (isError) toast(<span className="text-white">Something went wrong!</span>);
+    if (isError)
+      toast(<span className="text-white">Something went wrong!</span>);
   }, [isSuccess, isError]);
 
   return (
     <form
-      className="grid flex-col gap-5 rounded-lg px-2 py-5 shadow-[0_0_10px_1px] shadow-red md:mx-auto md:max-w-lg"
+      className="grid flex-col gap-5 rounded-lg px-2 py-5 !shadow-red !shadow-[0_0_10px_1px] md:mx-auto md:max-w-lg"
       onSubmit={handleSendMessage}
     >
       <h3>Contact me</h3>

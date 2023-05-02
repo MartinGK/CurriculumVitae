@@ -48,7 +48,7 @@ function TopNav() {
       value={itemSelected}
       onChange={handleChange}
       classes={classes}
-      className="hidden w-full justify-start bg-black text-white md:flex "
+      className="!hidden w-full justify-start bg-black text-white md:!flex "
       showLabels
     >
       <BottomNavigationAction
