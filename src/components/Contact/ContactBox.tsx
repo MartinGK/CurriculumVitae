@@ -4,8 +4,15 @@ import { AiOutlineSend } from "react-icons/ai";
 import { useMutation } from "react-query";
 import { toast } from "react-toastify";
 
+interface EmailFormValues {
+  firstName: string;
+  secondName: string;
+  email: string;
+  message: string;
+}
+
 export default function ContactBox() {
-  const { mutate, isLoading, isSuccess, isError } = useMutation((formData) =>
+  const { mutate, isSuccess, isError } = useMutation<Response>((formData) =>
     fetch("/api/sendEmail", {
       method: "POST",
       body: JSON.stringify(formData),
@@ -15,9 +22,9 @@ export default function ContactBox() {
     }).then((res) => res.json())
   );
 
-  const handleSendMessage = (event) => {
+  const handleSendMessage = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const formData = new FormData(event.target);
+    const formData = new FormData(event.target as HTMLFormElement);
     const data = Object.fromEntries(formData.entries());
     mutate(data as any);
   };

@@ -11,9 +11,9 @@ interface ISidebarOptions {
 
 export const SidebarOptionsContext = createContext<ISidebarOptions>({
   itemSelected: NavOptions.SKILLS,
-  setItemSelected: () => {},
-  onSwipedRight: () => {},
-  onSwipedLeft: () => {},
+  setItemSelected: () => 'test',
+  onSwipedRight: () => 'test',
+  onSwipedLeft: () => 'test',
 });
 
 interface ISidebarOptionsProviderProps {

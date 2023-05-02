@@ -1,3 +1,5 @@
+import { InformationEvent } from "http";
+import { NextApiRequest, NextApiResponse } from "next";
 import nodemailer from "nodemailer";
 import sgTransport from "nodemailer-sendgrid-transport";
 
@@ -10,7 +12,7 @@ const transporter = nodemailer.createTransport(
   })
 );
 
-export default function handler(req: any, res: any) {
+export default function handler(req: NextApiRequest , res: NextApiResponse) {
 
     const { firstName, secondName, email, message } = req.body;
   const mailOptions = {
@@ -20,13 +22,13 @@ export default function handler(req: any, res: any) {
     text: `from: ${firstName} ${secondName} \n\n email: ${email} \n\n message: \n\n ${message}`,
   };
 
-  transporter.sendMail(mailOptions, function (error: any, info: any) {
+  transporter.sendMail(mailOptions, function (error: Error, info: InformationEvent) {
     if (error) {
       console.log(error);
       res.status(400).json("Error");
     } else {
       console.log(info);
-      res.status(200).json("Correo electrónico enviado: " + info.response);
+      res.status(200).json("Correo electrónico enviado: " + info);
     }
   });
 }

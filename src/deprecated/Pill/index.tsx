@@ -6,11 +6,9 @@ import cx from "classnames";
 type TPill = {
   title: string;
   description: string;
-  from?: string;
-  to?: string;
 };
 
-const Pill = ({ title, description, from, to }: TPill) => {
+const Pill = ({ title, description }: TPill) => {
   const [show, setShow] = useState(false);
 
   const handleShow = () => {
