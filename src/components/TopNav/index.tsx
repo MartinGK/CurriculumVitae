@@ -35,10 +35,12 @@ const useStyles = makeStyles((theme) => ({
   selected: {},
 }));
 
+const classes = useStyles();
+
+
 function TopNav() {
   const { itemSelected, setItemSelected } = useContext(SidebarOptionsContext);
 
-  const classes = useStyles();
 
   const handleChange = (event, newValue) => {
     setItemSelected(newValue);
@@ -88,11 +90,6 @@ function TopNav() {
   );
 }
 
-TopNav.getInitialProps = async () => {
-  // Generate the styles on the server
-  useStyles();
 
-  return {};
-};
 
 export default TopNav;
