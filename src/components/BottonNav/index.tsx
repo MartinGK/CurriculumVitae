@@ -66,12 +66,8 @@ function BottomNav() {
   );
 }
 
-BottomNav.getInitialProps = async () => {
-  // Generate the styles on the server
-  useStyles();
 
-  return {};
-};
+
 
 
 export default BottomNav;
