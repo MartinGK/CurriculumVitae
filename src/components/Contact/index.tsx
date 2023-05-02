@@ -1,14 +1,11 @@
-import {
-  IconButton,
-  TextField,
-} from "@mui/material";
 import { motion } from "framer-motion";
 import React, { useContext } from "react";
-import { AiOutlineMail, AiOutlineSend } from "react-icons/ai";
+import { AiOutlineMail } from "react-icons/ai";
 import cx from "classnames";
 import { SidebarOptionsContext } from "contexts/SidebarOptionsContext";
 import { NavOptions, navOptionsArray } from "@constants";
 import Highlight from "components/Highlight";
+import ContactBox from "./ContactBox";
 
 export default function Contact() {
   const { itemSelected } = useContext(SidebarOptionsContext);
@@ -50,45 +47,7 @@ export default function Contact() {
             MartinKoulak@outlook.com
           </a>
         </div>
-        <div className="grid flex-col gap-5 rounded-lg px-2 py-5 shadow-[0_0_10px_1px] shadow-red md:max-w-lg md:mx-auto">
-          <h3>Contact me</h3>
-          <TextField
-            color="primary"
-            id="first-name"
-            placeholder="First name"
-            variant="standard"
-            type="text"
-          />
-          <TextField
-            color="primary"
-            id="second-name"
-            placeholder="Second name"
-            variant="standard"
-            type="text"
-          />
-          <TextField
-            color="primary"
-            id="email"
-            placeholder="Email"
-            variant="standard"
-            type="email"
-          />
-          <TextField
-            color="primary"
-            id="message"
-            placeholder="Message"
-            variant="standard"
-            multiline
-            rows={4}
-          />
-          <IconButton
-            aria-label="send message"
-            color="primary"
-            className="w-fit justify-self-end"
-          >
-            <AiOutlineSend className="ml-2 h-7 w-7 text-red" />
-          </IconButton>
-        </div>
+        <ContactBox />
       </div>
     </motion.div>
   );

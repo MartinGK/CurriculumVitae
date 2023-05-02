@@ -46,7 +46,7 @@ const Skills = () => {
                 <ul>
                   {skillsByGroup[group].map((skill) => {
                     return (
-                      <li className="flex items-center pl-5" key={skill}>
+                      <li className="flex items-center pl-5" key={skill.name}>
                         <RxCircle className="h-2 w-2 text-red mr-2" /> {skill.name}
                       </li>
                     );
