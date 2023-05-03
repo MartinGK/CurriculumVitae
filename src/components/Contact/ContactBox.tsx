@@ -1,4 +1,5 @@
-import { CircularProgress, IconButton, TextField } from "@mui/material";
+import { IconButton, TextField } from "@mui/material";
+import Loader from "components/Loader";
 import React, { useEffect } from "react";
 import { AiOutlineSend } from "react-icons/ai";
 import { useMutation } from "react-query";
@@ -87,7 +88,7 @@ export default function ContactBox() {
         type="submit"
       >
         {isLoading ? (
-          <CircularProgress size={24} className="text-red" />
+          <Loader />
         ) : (
           <AiOutlineSend size={24} className="ml-2 h-8 w-8 text-red" />
         )}

@@ -4,6 +4,7 @@ import { NavOptions, navOptionsArray } from "@constants";
 
 interface ISidebarOptions {
   itemSelected: string;
+  //eslint-disable-next-line
   setItemSelected: (item: string) => void;
   onSwipedRight: () => void;
   onSwipedLeft: () => void;
