@@ -1,7 +1,8 @@
 import theme from "utils/theme";
+import React from "react";
 import { ThemeProvider } from "@mui/material";
 import { QueryClient, QueryClientProvider } from "react-query";
-import { SidebarOptionsProvider } from "contexts/SidebarOptionsContext";
+import { SidebarOptionsProvider } from "contexts/sidebarOptionsContext";
 import { ToastContainer } from "react-toastify";
 import { Analytics } from "@vercel/analytics/react";
 import "react-toastify/dist/ReactToastify.css";

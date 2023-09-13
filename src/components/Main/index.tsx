@@ -2,7 +2,7 @@ import { colors } from "@constants";
 import { Divider, NoSsr } from "@mui/material";
 import AboutMe from "components/AboutMe";
 import Loader from "components/Loader";
-import { SidebarOptionsContext } from "contexts/SidebarOptionsContext";
+import { SidebarOptionsContext } from "contexts/sidebarOptionsContext";
 import React, { Suspense, lazy, useContext, useEffect, useRef } from "react";
 import { useSwipeable } from "react-swipeable";
 

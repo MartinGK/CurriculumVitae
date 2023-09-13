@@ -1,4 +1,4 @@
-// SidebarOptions.tsx
+// sidebarOptions.tsx
 import { createContext, useState, ReactNode, useCallback } from "react";
 import { NavOptions, navOptionsArray } from "@constants";
 
@@ -24,8 +24,7 @@ interface ISidebarOptionsProviderProps {
 export const SidebarOptionsProvider = ({
   children,
 }: ISidebarOptionsProviderProps) => {
-  // Crear un estado para mantener la opción de navegación actual
-  const [itemSelected, setItemSelected] = useState(NavOptions.ABOUT_ME);
+  const [itemSelected, setItemSelected] = useState<string>(NavOptions.ABOUT_ME);
 
   const onSwipedRight = useCallback(() => {
     const currentIndex = navOptionsArray.indexOf(itemSelected);
