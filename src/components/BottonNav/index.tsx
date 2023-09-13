@@ -39,24 +39,28 @@ function BottomNav() {
     >
       <BottomNavigationAction
         value={NavOptions.ABOUT_ME}
+        aria-label={NavOptions.ABOUT_ME}
         classes={classes}
         color="white"
         icon={<FaUser className="h-6 w-6" />}
       />
       <BottomNavigationAction
         value={NavOptions.EXPERIENCES}
+        aria-label={NavOptions.EXPERIENCES}
         classes={classes}
         color="white"
         icon={<MdWork className="h-6 w-6" />}
       />
       <BottomNavigationAction
         value={NavOptions.SKILLS}
+        aria-label={NavOptions.SKILLS}
         classes={classes}
         color="white"
         icon={<GiSkills className="h-6 w-6" />}
       />
       <BottomNavigationAction
         value={NavOptions.CONTACT}
+        aria-label={NavOptions.CONTACT}
         classes={classes}
         color="white"
         icon={<BsChat className="h-6 w-6" />}
