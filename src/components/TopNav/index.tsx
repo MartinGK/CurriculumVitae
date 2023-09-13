@@ -54,6 +54,7 @@ function TopNav() {
       <BottomNavigationAction
         value={NavOptions.ABOUT_ME}
         label={NavOptions.ABOUT_ME}
+        aria-label={NavOptions.ABOUT_ME}
         showLabel={itemSelected !== NavOptions.ABOUT_ME}
         classes={classes}
         color="white"
@@ -62,6 +63,7 @@ function TopNav() {
       <BottomNavigationAction
         value={NavOptions.EXPERIENCES}
         label={NavOptions.EXPERIENCES}
+        aria-label={NavOptions.EXPERIENCES}
         showLabel={itemSelected !== NavOptions.EXPERIENCES}
         classes={classes}
         color="white"
@@ -70,6 +72,7 @@ function TopNav() {
       <BottomNavigationAction
         value={NavOptions.SKILLS}
         label={NavOptions.SKILLS}
+        aria-label={NavOptions.SKILLS}
         showLabel={itemSelected !== NavOptions.SKILLS}
         classes={classes}
         color="white"
@@ -78,6 +81,7 @@ function TopNav() {
       <BottomNavigationAction
         value={NavOptions.CONTACT}
         label={NavOptions.CONTACT}
+        aria-label={NavOptions.CONTACT}
         showLabel={itemSelected !== NavOptions.CONTACT}
         classes={classes}
         color="white"
