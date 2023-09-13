@@ -22,6 +22,9 @@
       "components/*": [
         "components/*"
       ],
+      "contexts/*": [
+        "contexts/*"
+      ],
       "@constants": [
         "constants/index.ts"
       ]
