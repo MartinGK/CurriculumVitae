@@ -11,8 +11,9 @@ import "../styles/globals.css";
 const queryClient = new QueryClient();
 
 function MyApp({ Component, pageProps }) {
+
   return (
-    <SidebarOptionsProvider>
+    <SidebarOptionsProvider >
       <QueryClientProvider client={queryClient}>
         <ThemeProvider theme={theme}>
           <ToastContainer
