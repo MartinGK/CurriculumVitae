@@ -84,18 +84,18 @@ export const AboutMe = () => {
             </div>
           </div>
           <div className="flex justify-between pb-2 pt-10 md:hidden">
-            <Link href="https://github.com/MartinGK" target="__blank">
+            <Link href="https://github.com/MartinGK" target="__blank" aria-label="github">
               <BsGithub className="ml-4 h-8 w-8 text-red" />
             </Link>
             <Link
               href="https://stackoverflow.com/users/12172697/martin-gainza-koulaksezian"
-              target="__blank"
+              target="__blank" aria-label="stack overflow"
             >
               <BsStackOverflow className="h-8 w-8 text-red" />
             </Link>
             <Link
               href="https://www.linkedin.com/in/martin-gainza-koulaksezian/"
-              target="__blank"
+              target="__blank" aria-label="linkedin"
             >
               <BsLinkedin className="mr-4 h-8 w-8 text-red" />
             </Link>
