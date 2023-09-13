@@ -1,7 +1,7 @@
 import { navOptionsArray, skillsByGroup } from "@constants";
 import { motion } from "framer-motion";
 import { useContext, } from "react";
-import { SidebarOptionsContext } from "contexts/sidebarOptionsContext";
+import { SidebarOptionsContext } from "contexts/SidebarOptionsContext";
 import { NavOptions } from "@constants";
 import cx from "classnames";
 import { MdCircle } from "react-icons/md";

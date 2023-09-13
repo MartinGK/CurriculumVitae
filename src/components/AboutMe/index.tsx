@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { NavOptions, navOptionsArray } from "@constants";
-import { SidebarOptionsContext } from "contexts/sidebarOptionsContext";
+import { SidebarOptionsContext } from "contexts/SidebarOptionsContext";
 import { motion } from "framer-motion";
 import { useContext } from "react";
 import cx from "classnames";

@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import React, { useContext } from "react";
 import { AiOutlineMail } from "react-icons/ai";
 import cx from "classnames";
-import { SidebarOptionsContext } from "contexts/sidebarOptionsContext";
+import { SidebarOptionsContext } from "contexts/SidebarOptionsContext";
 import { NavOptions, navOptionsArray } from "@constants";
 import Highlight from "components/Highlight";
 import ContactBox from "./ContactBox";

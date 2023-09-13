@@ -1,5 +1,5 @@
 import { NavOptions, experiences, navOptionsArray } from "@constants";
-import { SidebarOptionsContext } from "contexts/sidebarOptionsContext";
+import { SidebarOptionsContext } from "contexts/SidebarOptionsContext";
 import { useContext } from "react";
 import { motion } from "framer-motion";
 import cx from "classnames";

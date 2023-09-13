@@ -8,7 +8,7 @@ import { BsChat } from "react-icons/bs";
 import { BottomNavigation, BottomNavigationAction } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import { colors, NavOptions } from "@constants";
-import { SidebarOptionsContext } from "contexts/sidebarOptionsContext";
+import { SidebarOptionsContext } from "contexts/SidebarOptionsContext";
 
 const useStyles = makeStyles(() => ({
   root: {
