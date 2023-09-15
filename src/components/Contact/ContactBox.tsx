@@ -86,7 +86,7 @@ export default function ContactBox() {
         color="primary"
         className="w-fit justify-self-end"
         type="submit"
-      >
+        size="large">
         {isLoading ? (
           <Loader />
         ) : (
