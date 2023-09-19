@@ -5,14 +5,14 @@ import { FaUser } from "react-icons/fa";
 import { MdWork } from "react-icons/md";
 import { GiSkills } from "react-icons/gi";
 import { BsChat } from "react-icons/bs";
-import { BottomNavigation, BottomNavigationAction } from "@mui/material";
-import { makeStyles } from "@mui/styles";
+import { BottomNavigation, BottomNavigationAction, styled } from "@mui/material";
 import { colors, NavOptions } from "@constants";
 import { SidebarOptionsContext } from "contexts/SidebarOptionsContext";
 
-const useStyles = makeStyles(() => ({
+const StyledBottomNavigationAction = styled(BottomNavigationAction)({
   root: {
     backgroundColor: colors.black,
+    color: colors.white,
     flexDirection: "row",
     borderBottomWidth: "0px",
     borderBottom: "3px solid transparent",
@@ -29,15 +29,12 @@ const useStyles = makeStyles(() => ({
     "& svg": {
       marginRight: "0.5rem",
     },
-    color: colors.white,
   },
-  selected: {},
-}));
+});
 
 function TopNav() {
   const { itemSelected, setItemSelected } = useContext(SidebarOptionsContext);
 
-  const classes = useStyles();
 
   const handleChange = (_, newValue) => {
     setItemSelected(newValue);
@@ -47,43 +44,38 @@ function TopNav() {
     <BottomNavigation
       value={itemSelected}
       onChange={handleChange}
-      classes={classes}
       className="!hidden w-full justify-start bg-black text-white md:!flex "
       showLabels
     >
-      <BottomNavigationAction
+      <StyledBottomNavigationAction
         value={NavOptions.ABOUT_ME}
         label={NavOptions.ABOUT_ME}
         aria-label={NavOptions.ABOUT_ME}
         showLabel={itemSelected !== NavOptions.ABOUT_ME}
-        classes={classes}
         color="white"
         icon={<FaUser className="h-6 w-6" />}
       />
-      <BottomNavigationAction
+      <StyledBottomNavigationAction
         value={NavOptions.EXPERIENCES}
         label={NavOptions.EXPERIENCES}
         aria-label={NavOptions.EXPERIENCES}
         showLabel={itemSelected !== NavOptions.EXPERIENCES}
-        classes={classes}
         color="white"
         icon={<MdWork className="h-6 w-6" />}
       />
-      <BottomNavigationAction
+      <StyledBottomNavigationAction
         value={NavOptions.SKILLS}
         label={NavOptions.SKILLS}
         aria-label={NavOptions.SKILLS}
         showLabel={itemSelected !== NavOptions.SKILLS}
-        classes={classes}
         color="white"
         icon={<GiSkills className="h-6 w-6" />}
       />
-      <BottomNavigationAction
+      <StyledBottomNavigationAction
         value={NavOptions.CONTACT}
         label={NavOptions.CONTACT}
         aria-label={NavOptions.CONTACT}
         showLabel={itemSelected !== NavOptions.CONTACT}
-        classes={classes}
         color="white"
         icon={<BsChat className="h-6 w-6" />}
       />
