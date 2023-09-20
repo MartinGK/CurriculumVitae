@@ -8,8 +8,8 @@ import { BottomNavigation, BottomNavigationAction } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import { colors, NavOptions } from "@constants";
 import { observer } from "mobx-react-lite";
-import { SidebarOptions } from "store/sidebarOptions";
-import { startTransition } from "react";
+import { startTransition, useContext } from "react";
+import { SidebarOptionsContext } from "contexts/sidebarOptionsContext";
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -22,11 +22,8 @@ const useStyles = makeStyles(() => ({
   selected: {},
 }));
 
-type BottomNavProps = {
-  sidebarOptions: SidebarOptions
-}
-
-export default observer(function BottomNav({ sidebarOptions }: BottomNavProps) {
+export default observer(function BottomNav() {
+  const sidebarOptions = useContext(SidebarOptionsContext);
   const classes = useStyles();
 
   const { itemSelected } = sidebarOptions;

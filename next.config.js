@@ -1,5 +1,4 @@
-const path = require('path')
-
+const path = require("path");
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -10,10 +9,10 @@ const nextConfig = {
     defaultLocale: "en",
   },
   webpack: config => {
-    config.resolve.modules.push(path.resolve('./src'))
+    config.resolve.modules.push(path.resolve("./src"));
 
-    return config
+    return config;
   }
-}
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

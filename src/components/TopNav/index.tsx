@@ -8,7 +8,8 @@ import { BottomNavigation, BottomNavigationAction } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import { colors, NavOptions } from "@constants";
 import { observer } from "mobx-react-lite";
-import { SidebarOptions } from "store/sidebarOptions";
+import { useContext } from "react";
+import { SidebarOptionsContext } from "contexts/sidebarOptionsContext";
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -34,11 +35,8 @@ const useStyles = makeStyles(() => ({
   selected: {},
 }));
 
-type TopNavProps = {
-  sidebarOptions: SidebarOptions
-}
-
-export default observer(function TopNav({ sidebarOptions }: TopNavProps) {
+export default observer(function TopNav() {
+  const sidebarOptions = useContext(SidebarOptionsContext);
   const { itemSelected } = sidebarOptions;
 
   const classes = useStyles();

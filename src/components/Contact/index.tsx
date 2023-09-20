@@ -1,3 +1,4 @@
+import { useContext } from "react";
 import { motion } from "framer-motion";
 import { AiOutlineMail } from "react-icons/ai";
 import cx from "classnames";
@@ -5,13 +6,10 @@ import { NavOptions, navOptionsArray } from "@constants";
 import Highlight from "components/Highlight";
 import ContactBox from "./ContactBox";
 import { observer } from "mobx-react-lite";
-import { SidebarOptions } from "store/sidebarOptions";
+import { SidebarOptionsContext } from "contexts/sidebarOptionsContext";
 
-type ContactProps = {
-  sidebarOptions: SidebarOptions
-}
-
-export default observer(function Contact({ sidebarOptions }: ContactProps) {
+export default observer(function Contact() {
+  const sidebarOptions = useContext(SidebarOptionsContext);
   const { itemSelected } = sidebarOptions;
 
   return (

@@ -5,13 +5,11 @@ import cx from "classnames";
 import { MdCircle } from "react-icons/md";
 import { RxCircle } from "react-icons/rx";
 import { observer } from "mobx-react-lite";
-import { SidebarOptions } from "store/sidebarOptions";
+import { useContext } from "react";
+import { SidebarOptionsContext } from "contexts/sidebarOptionsContext";
 
-type SkillsProps = {
-  sidebarOptions: SidebarOptions
-}
-
-export default observer(function Skills({ sidebarOptions }: SkillsProps) {
+export default observer(function Skills() {
+  const sidebarOptions = useContext(SidebarOptionsContext);
   const { itemSelected } = sidebarOptions;
 
   return (

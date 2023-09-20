@@ -3,13 +3,11 @@ import { motion } from "framer-motion";
 import cx from "classnames";
 import ExperienceCard from "components/ExperienceCard";
 import { observer } from "mobx-react-lite";
-import { SidebarOptions } from "store/sidebarOptions";
+import { useContext } from "react";
+import { SidebarOptionsContext } from "contexts/sidebarOptionsContext";
 
-type EsperiencesProps = {
-  sidebarOptions: SidebarOptions
-}
-
-export default observer(function Experiences({ sidebarOptions }: EsperiencesProps) {
+export default observer(function Experiences() {
+  const sidebarOptions = useContext(SidebarOptionsContext);
   const { itemSelected } = sidebarOptions;
 
   return (

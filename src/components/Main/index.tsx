@@ -2,19 +2,16 @@ import { colors } from "@constants";
 import { Divider, NoSsr } from "@mui/material";
 import AboutMe from "components/AboutMe";
 import { observer } from "mobx-react-lite";
-import { useEffect, useRef } from "react";
+import { useContext, useEffect, useRef } from "react";
 import { useSwipeable } from "react-swipeable";
-import { SidebarOptions } from "store/sidebarOptions";
 import Contact from "components/Contact";
 import Experiences from "components/Experiences";
 import Skills from "components/Skills";
 import TopNav from "components/TopNav";
+import { SidebarOptionsContext } from "contexts/sidebarOptionsContext";
 
-type MainProps = {
-  sidebarOptions: SidebarOptions
-}
-
-export default observer(function Main({ sidebarOptions }: MainProps) {
+export default observer(function Main() {
+  const sidebarOptions = useContext(SidebarOptionsContext);
   const { onSwipedRight, onSwipedLeft, itemSelected } = sidebarOptions;
   const mainRef = useRef(null);
 
@@ -45,13 +42,13 @@ export default observer(function Main({ sidebarOptions }: MainProps) {
           ref={mainRef}
         >
           <NoSsr>
-            <TopNav sidebarOptions={sidebarOptions} />
+            <TopNav />
           </NoSsr>
           <div className="bg-card-1 z-1 absolute mt-14 hidden w-full bg-black px-5 pb-20 text-white md:flex md:h-[40rem] md:items-center md:rounded-b-md md:rounded-r-md md:px-0" />
-          <AboutMe sidebarOptions={sidebarOptions} />
-          <Experiences sidebarOptions={sidebarOptions} />
-          <Skills sidebarOptions={sidebarOptions} />
-          <Contact sidebarOptions={sidebarOptions} />
+          <AboutMe />
+          <Experiences />
+          <Skills />
+          <Contact />
         </main>
       </div>
     </>

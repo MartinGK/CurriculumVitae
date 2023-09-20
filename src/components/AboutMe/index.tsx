@@ -6,13 +6,11 @@ import Highlight from "components/Highlight";
 import { BsGithub, BsStackOverflow, BsLinkedin } from "react-icons/bs";
 import Link from "next/link";
 import { observer } from "mobx-react-lite";
-import { SidebarOptions } from "store/sidebarOptions";
+import { useContext } from "react";
+import { SidebarOptionsContext } from "contexts/sidebarOptionsContext";
 
-type AboutMeProps = {
-  sidebarOptions: SidebarOptions
-}
-
-export default observer(function AboutMe({ sidebarOptions }: AboutMeProps) {
+export default observer(function AboutMe() {
+  const sidebarOptions = useContext(SidebarOptionsContext);
   const { itemSelected } = sidebarOptions;
 
   return (
@@ -110,4 +108,3 @@ export default observer(function AboutMe({ sidebarOptions }: AboutMeProps) {
     </motion.div >
   );
 });
-
