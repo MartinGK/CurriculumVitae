@@ -4,9 +4,11 @@ import { useContext } from "react";
 import { motion } from "framer-motion";
 import cx from "classnames";
 import ExperienceCard from "components/ExperienceCard";
+import { observer } from "mobx-react-lite";
 
-const Experiences = () => {
-  const { itemSelected } = useContext(SidebarOptionsContext);
+export default observer(function Experiences() {
+  const sidebarOptions = useContext(SidebarOptionsContext);
+  const { itemSelected } = sidebarOptions;
 
   return (
     <motion.div
@@ -39,6 +41,4 @@ const Experiences = () => {
       </div>
     </motion.div>
   );
-};
-
-export default Experiences;
+});

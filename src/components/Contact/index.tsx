@@ -6,9 +6,11 @@ import { SidebarOptionsContext } from "contexts/SidebarOptionsContext";
 import { NavOptions, navOptionsArray } from "@constants";
 import Highlight from "components/Highlight";
 import ContactBox from "./ContactBox";
+import { observer } from "mobx-react-lite";
 
-export default function Contact() {
-  const { itemSelected } = useContext(SidebarOptionsContext);
+export default observer(function Contact() {
+  const sidebarOptions = useContext(SidebarOptionsContext);
+  const { itemSelected } = sidebarOptions
 
   return (
     <motion.div
@@ -51,4 +53,4 @@ export default function Contact() {
       </div>
     </motion.div>
   );
-}
+});

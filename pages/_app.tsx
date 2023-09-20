@@ -1,10 +1,11 @@
+'use client'
 import theme from "utils/theme";
-import React from "react";
+import React, { createContext } from "react";
 import { ThemeProvider, Theme, StyledEngineProvider } from "@mui/material";
 import { QueryClient, QueryClientProvider } from "react-query";
-import { SidebarOptionsProvider } from "contexts/SidebarOptionsContext";
 import { ToastContainer } from "react-toastify";
 import { Analytics } from "@vercel/analytics/react";
+import { SidebarOptions } from "store/sidebarOptions";
 import "react-toastify/dist/ReactToastify.css";
 import "../styles/tailwind.css";
 import "../styles/globals.css";
@@ -14,12 +15,16 @@ declare module "@mui/styles/defaultTheme" {
   interface DefaultTheme extends Theme {}
 }
 
+const sidebarOptions = new SidebarOptions()
+
+export const SidebarOptionsContext = createContext<SidebarOptions>(sidebarOptions);
+
 const queryClient = new QueryClient();
 
 function MyApp({ Component, pageProps }) {
 
   return (
-    <SidebarOptionsProvider >
+    <SidebarOptionsContext.Provider value={sidebarOptions} >
       <QueryClientProvider client={queryClient}>
         <StyledEngineProvider injectFirst>
           <ThemeProvider theme={theme}>
@@ -33,7 +38,7 @@ function MyApp({ Component, pageProps }) {
           </ThemeProvider>
         </StyledEngineProvider>
       </QueryClientProvider>
-    </SidebarOptionsProvider>
+    </SidebarOptionsContext.Provider>
   );
 }
 

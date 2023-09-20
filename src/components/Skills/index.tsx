@@ -6,10 +6,12 @@ import { NavOptions } from "@constants";
 import cx from "classnames";
 import { MdCircle } from "react-icons/md";
 import { RxCircle } from "react-icons/rx";
+import { observer } from "mobx-react-lite";
 
-const Skills = () => {
-  const { itemSelected } = useContext(SidebarOptionsContext);
-
+export default observer(function Skills() {
+  const sidebarOptions = useContext(SidebarOptionsContext);
+  const { itemSelected } = sidebarOptions;
+  
   return (
     <motion.article
       className={cx(
@@ -56,6 +58,4 @@ const Skills = () => {
       </div>
     </motion.article>
   );
-};
-
-export default Skills;
+});

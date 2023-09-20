@@ -7,20 +7,23 @@ import cx from "classnames";
 import Highlight from "components/Highlight";
 import { BsGithub, BsStackOverflow, BsLinkedin } from "react-icons/bs";
 import Link from "next/link";
+import { observer } from "mobx-react-lite";
 
-export const AboutMe = () => {
-  const { itemSelected } = useContext(SidebarOptionsContext);
+export default observer(function AboutMe() {
+  const sidebarOptions = useContext(SidebarOptionsContext);
+  const { itemSelected } = sidebarOptions
 
   return (
     <motion.div
-      className={cx(
-        "bg-card-1 bg-transparent px-5 pb-20 text-white md:rounded-b-md md:rounded-r-md md:px-0 md:h-[40rem] md:items-center z-10",
-        {
-          "!left-0": itemSelected === NavOptions.ABOUT_ME,
-          hidden: itemSelected !== NavOptions.ABOUT_ME,
-          flex: itemSelected === NavOptions.ABOUT_ME,
-        }
-      )}
+      className={
+        cx(
+          "bg-card-1 bg-transparent px-5 pb-20 text-white md:rounded-b-md md:rounded-r-md md:px-0 md:h-[40rem] md:items-center z-10",
+          {
+            "!left-0": itemSelected === NavOptions.ABOUT_ME,
+            hidden: itemSelected !== NavOptions.ABOUT_ME,
+            flex: itemSelected === NavOptions.ABOUT_ME,
+          }
+        )}
       animate={{
         opacity: itemSelected === NavOptions.ABOUT_ME ? 1 : 0,
         x:
@@ -102,8 +105,7 @@ export const AboutMe = () => {
           </div>
         </div>
       </div>
-    </motion.div>
+    </motion.div >
   );
-};
+});
 
-export default AboutMe;

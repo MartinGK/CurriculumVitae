@@ -3,6 +3,7 @@ import { Divider, NoSsr } from "@mui/material";
 import AboutMe from "components/AboutMe";
 import Loader from "components/Loader";
 import { SidebarOptionsContext } from "contexts/SidebarOptionsContext";
+import { observer } from "mobx-react-lite";
 import React, { Suspense, lazy, useContext, useEffect, useRef } from "react";
 import { useSwipeable } from "react-swipeable";
 
@@ -11,9 +12,9 @@ const Experiences = lazy(() => import("components/Experiences"));
 const Skills = lazy(() => import("components/Skills"));
 const TopNav = lazy(() => import("components/TopNav"));
 
-export default function Main() {
-  const { onSwipedRight, onSwipedLeft } = useContext(SidebarOptionsContext);
-  const { itemSelected } = useContext(SidebarOptionsContext);
+export default observer(function Main() {
+  const sidebarOptions = useContext(SidebarOptionsContext)
+  const { onSwipedRight, onSwipedLeft, itemSelected } = sidebarOptions;
   const mainRef = useRef(null);
 
   const handlers = useSwipeable({
@@ -62,4 +63,4 @@ export default function Main() {
       </div>
     </>
   );
-}
+});

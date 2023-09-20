@@ -9,6 +9,7 @@ import { BottomNavigation, BottomNavigationAction } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import { colors, NavOptions } from "@constants";
 import { SidebarOptionsContext } from "contexts/SidebarOptionsContext";
+import { observer } from "mobx-react-lite";
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -21,9 +22,11 @@ const useStyles = makeStyles(() => ({
   selected: {},
 }));
 
-function BottomNav() {
-  const { itemSelected, setItemSelected } = useContext(SidebarOptionsContext);
+export default observer(function BottomNav() {
+  const sidebarOptions = useContext(SidebarOptionsContext);
   const classes = useStyles();
+
+  const { itemSelected, setItemSelected } = sidebarOptions;
 
   const handleChange = (_, newValue) => {
     setItemSelected(newValue);
@@ -67,6 +70,4 @@ function BottomNav() {
       />
     </BottomNavigation>
   );
-}
-
-export default BottomNav;
+});
