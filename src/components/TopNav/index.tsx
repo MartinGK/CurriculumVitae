@@ -1,6 +1,5 @@
 "use client";
 
-import React, { useContext } from "react";
 import { FaUser } from "react-icons/fa";
 import { MdWork } from "react-icons/md";
 import { GiSkills } from "react-icons/gi";
@@ -8,8 +7,8 @@ import { BsChat } from "react-icons/bs";
 import { BottomNavigation, BottomNavigationAction } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import { colors, NavOptions } from "@constants";
-import { SidebarOptionsContext } from "contexts/SidebarOptionsContext";
 import { observer } from "mobx-react-lite";
+import { SidebarOptions } from "store/sidebarOptions";
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -35,14 +34,17 @@ const useStyles = makeStyles(() => ({
   selected: {},
 }));
 
-export default observer(function TopNav() {
-  const sidebarOptions = useContext(SidebarOptionsContext);
-  const { itemSelected, setItemSelected } = sidebarOptions;
+type TopNavProps = {
+  sidebarOptions: SidebarOptions
+}
+
+export default observer(function TopNav({ sidebarOptions }: TopNavProps) {
+  const { itemSelected } = sidebarOptions;
 
   const classes = useStyles();
 
-  const handleChange = (_, newValue) => {
-    setItemSelected(newValue);
+  const handleChange = (_, newValue: string) => {
+    sidebarOptions.itemSelected = newValue;
   };
 
   return (

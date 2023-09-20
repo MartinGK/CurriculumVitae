@@ -4,6 +4,7 @@ import Head from "next/head";
 import BottomNav from "components/BottonNav";
 import { NoSsr } from "@mui/material";
 import Main from "components/Main";
+import sidebarOptions from "store/sidebarOptions";
 
 export default function Home() {
   return (
@@ -14,9 +15,9 @@ export default function Home() {
         <meta name="google" content="notranslate" />
         <link rel="icon" href="/images/icon.jpg" />
       </Head>
-      <Main />
+      <Main sidebarOptions={sidebarOptions} />
       <NoSsr>
-        <BottomNav />
+        <BottomNav sidebarOptions={sidebarOptions}/>
       </NoSsr>
     </>
   );

@@ -1,19 +1,20 @@
 import { colors } from "@constants";
 import { Divider, NoSsr } from "@mui/material";
 import AboutMe from "components/AboutMe";
-import Loader from "components/Loader";
-import { SidebarOptionsContext } from "contexts/SidebarOptionsContext";
 import { observer } from "mobx-react-lite";
-import React, { Suspense, lazy, useContext, useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { useSwipeable } from "react-swipeable";
+import { SidebarOptions } from "store/sidebarOptions";
+import Contact from "components/Contact";
+import Experiences from "components/Experiences";
+import Skills from "components/Skills";
+import TopNav from "components/TopNav";
 
-const Contact = lazy(() => import("components/Contact"));
-const Experiences = lazy(() => import("components/Experiences"));
-const Skills = lazy(() => import("components/Skills"));
-const TopNav = lazy(() => import("components/TopNav"));
+type MainProps = {
+  sidebarOptions: SidebarOptions
+}
 
-export default observer(function Main() {
-  const sidebarOptions = useContext(SidebarOptionsContext)
+export default observer(function Main({ sidebarOptions }: MainProps) {
   const { onSwipedRight, onSwipedLeft, itemSelected } = sidebarOptions;
   const mainRef = useRef(null);
 
@@ -44,21 +45,13 @@ export default observer(function Main() {
           ref={mainRef}
         >
           <NoSsr>
-            <Suspense fallback={<Loader />}>
-              <TopNav />
-            </Suspense>
+            <TopNav sidebarOptions={sidebarOptions} />
           </NoSsr>
           <div className="bg-card-1 z-1 absolute mt-14 hidden w-full bg-black px-5 pb-20 text-white md:flex md:h-[40rem] md:items-center md:rounded-b-md md:rounded-r-md md:px-0" />
-          <AboutMe />
-          <Suspense fallback={<Loader />}>
-            <Experiences />
-          </Suspense>
-          <Suspense fallback={<Loader />}>
-            <Skills />
-          </Suspense>
-          <Suspense fallback={<Loader />}>
-            <Contact />
-          </Suspense>
+          <AboutMe sidebarOptions={sidebarOptions} />
+          <Experiences sidebarOptions={sidebarOptions} />
+          <Skills sidebarOptions={sidebarOptions} />
+          <Contact sidebarOptions={sidebarOptions} />
         </main>
       </div>
     </>

@@ -1,17 +1,19 @@
 import { navOptionsArray, skillsByGroup } from "@constants";
 import { motion } from "framer-motion";
-import { useContext, } from "react";
-import { SidebarOptionsContext } from "contexts/SidebarOptionsContext";
 import { NavOptions } from "@constants";
 import cx from "classnames";
 import { MdCircle } from "react-icons/md";
 import { RxCircle } from "react-icons/rx";
 import { observer } from "mobx-react-lite";
+import { SidebarOptions } from "store/sidebarOptions";
 
-export default observer(function Skills() {
-  const sidebarOptions = useContext(SidebarOptionsContext);
+type SkillsProps = {
+  sidebarOptions: SidebarOptions
+}
+
+export default observer(function Skills({ sidebarOptions }: SkillsProps) {
   const { itemSelected } = sidebarOptions;
-  
+
   return (
     <motion.article
       className={cx(

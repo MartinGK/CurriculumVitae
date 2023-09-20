@@ -1,17 +1,19 @@
 import Image from "next/image";
 import { NavOptions, navOptionsArray } from "@constants";
-import { SidebarOptionsContext } from "contexts/SidebarOptionsContext";
 import { motion } from "framer-motion";
-import { useContext } from "react";
 import cx from "classnames";
 import Highlight from "components/Highlight";
 import { BsGithub, BsStackOverflow, BsLinkedin } from "react-icons/bs";
 import Link from "next/link";
 import { observer } from "mobx-react-lite";
+import { SidebarOptions } from "store/sidebarOptions";
 
-export default observer(function AboutMe() {
-  const sidebarOptions = useContext(SidebarOptionsContext);
-  const { itemSelected } = sidebarOptions
+type AboutMeProps = {
+  sidebarOptions: SidebarOptions
+}
+
+export default observer(function AboutMe({ sidebarOptions }: AboutMeProps) {
+  const { itemSelected } = sidebarOptions;
 
   return (
     <motion.div

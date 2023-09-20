@@ -1,13 +1,15 @@
 import { NavOptions, experiences, navOptionsArray } from "@constants";
-import { SidebarOptionsContext } from "contexts/SidebarOptionsContext";
-import { useContext } from "react";
 import { motion } from "framer-motion";
 import cx from "classnames";
 import ExperienceCard from "components/ExperienceCard";
 import { observer } from "mobx-react-lite";
+import { SidebarOptions } from "store/sidebarOptions";
 
-export default observer(function Experiences() {
-  const sidebarOptions = useContext(SidebarOptionsContext);
+type EsperiencesProps = {
+  sidebarOptions: SidebarOptions
+}
+
+export default observer(function Experiences({ sidebarOptions }: EsperiencesProps) {
   const { itemSelected } = sidebarOptions;
 
   return (
