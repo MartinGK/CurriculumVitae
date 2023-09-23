@@ -5,11 +5,11 @@ import { QueryClient, QueryClientProvider } from "react-query";
 const queryClient = new QueryClient();
 
 export default function Providers({ children }: { children: ReactNode }) {
-    return (
-        <SidebarOptionsProvider>
-            <QueryClientProvider client={queryClient}>
-                {children}
-            </QueryClientProvider>
-        </SidebarOptionsProvider>
-    );
+  return (
+    <SidebarOptionsProvider>
+      <QueryClientProvider client={queryClient}>
+        {children}
+      </QueryClientProvider>
+    </SidebarOptionsProvider>
+  );
 }

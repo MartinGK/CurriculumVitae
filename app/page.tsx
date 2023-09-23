@@ -1,5 +1,5 @@
-import { redirect } from 'next/navigation';
+import { redirect } from "next/navigation";
 
 export default function Page() {
-    redirect('/about-me');
+  redirect("/about-me");
 }

@@ -1,21 +1,10 @@
 
-'use client'
-import { navOptionsArray, skillsByGroup } from "@constants";
-import { motion } from "framer-motion";
-import { NavOptions } from "@constants";
-import cx from "classnames";
+"use client";
+import { skillsByGroup } from "@constants";
 import { MdCircle } from "react-icons/md";
 import { RxCircle } from "react-icons/rx";
-import { observer } from "mobx-react-lite";
-import { useContext } from "react";
-import { SidebarOptionsContext } from "contexts/sidebarOptionsContext";
-import { useSelectedLayoutSegment } from "next/navigation";
 
-export default observer(function Skills() {
-  const sidebarOptions = useContext(SidebarOptionsContext);
-  const { itemSelected } = sidebarOptions;
-  const segment = useSelectedLayoutSegment();
-
+export default function Skills() {
   return (
     <div className="w-full pt-20 pl-4 grid grid-cols-2 md:grid-cols-3 pb-20 md:py-5">
       {Object.keys(skillsByGroup).map((group) => {
@@ -41,4 +30,4 @@ export default observer(function Skills() {
       })}
     </div>
   );
-});
+};

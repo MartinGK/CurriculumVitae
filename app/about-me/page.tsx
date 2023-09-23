@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import Image from "next/image";
 import Highlight from "../components/Highlight";
 import { BsGithub, BsStackOverflow, BsLinkedin } from "react-icons/bs";
@@ -53,7 +53,7 @@ export default function AboutMe() {
                 latest trends. I love working in teams and I believe I have the
                 right set of soft skills to balance my technical skills and
                 bring value to the projects I&apos;m entrusted with.
-              </p>
+            </p>
           </div>
         </div>
         <div className="flex justify-between pb-2 pt-10 md:hidden">

@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import { AiOutlineMail } from "react-icons/ai";
 import Highlight from "../components/Highlight";
 import ContactBox from "./ContactBox";
@@ -12,7 +12,7 @@ export default function Contact() {
         <Highlight>a challenge</Highlight> to present to me feel free to{" "}
         <Highlight>get in touch</Highlight> at the email address or by sending
           me a message below.
-        </p>
+      </p>
       <div className="flex w-full justify-between">
         <a
           href="mailto:MartinKoulak@outlook.com"
@@ -20,7 +20,7 @@ export default function Contact() {
         >
           <AiOutlineMail className="mr-2 h-5 w-5 text-red " />{" "}
             MartinKoulak@outlook.com
-          </a>
+        </a>
       </div>
       <ContactBox />
     </div>

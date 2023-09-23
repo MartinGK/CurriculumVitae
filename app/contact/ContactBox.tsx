@@ -1,5 +1,4 @@
-'use client'
-import { IconButton } from "@mui/material";
+"use client";
 import TextField from "../components/TextField";
 import Loader from "../components/Loader";
 import React, { useEffect } from "react";
@@ -79,18 +78,17 @@ export default function ContactBox() {
         multiline
         rows={4}
       />
-      <IconButton
+      <button
         aria-label="send message"
         color="primary"
         className="w-fit justify-self-end"
-        type="submit"
-        size="large">
+        type="submit">
         {isLoading ? (
           <Loader />
         ) : (
           <AiOutlineSend size={24} className="ml-2 h-8 w-8 text-red" />
         )}
-      </IconButton>
+      </button>
     </form>
   );
 }
