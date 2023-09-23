@@ -1,5 +1,7 @@
-import { IconButton, TextField } from "@mui/material";
-import Loader from "components/Loader";
+'use client'
+import { IconButton } from "@mui/material";
+import TextField from "../components/TextField";
+import Loader from "../components/Loader";
 import React, { useEffect } from "react";
 import { AiOutlineSend } from "react-icons/ai";
 import { useMutation } from "react-query";
@@ -49,35 +51,31 @@ export default function ContactBox() {
     >
       <h3>Contact me</h3>
       <TextField
-        color="primary"
+        label="firstName"
         id="firstName"
         name="firstName"
         placeholder="First name"
-        variant="standard"
         type="text"
       />
       <TextField
-        color="primary"
+        label="secondName"
         id="secondName"
         name="secondName"
         placeholder="Second name"
-        variant="standard"
         type="text"
       />
       <TextField
-        color="primary"
+        label="email"
         id="email"
         name="email"
         placeholder="Email"
-        variant="standard"
         type="email"
       />
       <TextField
-        color="primary"
+        label="message"
         id="message"
         name="message"
         placeholder="Message"
-        variant="standard"
         multiline
         rows={4}
       />

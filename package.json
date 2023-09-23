@@ -16,6 +16,7 @@
     "@emotion/styled": "^11.11.0",
     "@mui/material": "^5.14.9",
     "@mui/styles": "^5.14.9",
+    "@next/bundle-analyzer": "^13.5.2",
     "@typescript-eslint/eslint-plugin": "^6.7.0",
     "@vercel/analytics": "^1.0.2",
     "classnames": "^2.3.2",

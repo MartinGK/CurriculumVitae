@@ -171,6 +171,13 @@ export const NavOptions = {
   CONTACT: "Contact",
 };
 
+export const NavOptionsSegments = {
+  'about-me': NavOptions.ABOUT_ME,
+  'skills': NavOptions.SKILLS,
+  'contact': NavOptions.CONTACT,
+  'experiences': NavOptions.EXPERIENCES,
+}
+
 export const navOptionsArray = Object.values(NavOptions);
 
 export const colors = {

@@ -1,4 +1,4 @@
-import Highlight from "components/Highlight";
+import Highlight from "../Highlight";
 
 export default function HighlightText({ text }: { text: string }) {
   const p = text.split(/(\[.*?\])/);
