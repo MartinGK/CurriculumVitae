@@ -19,14 +19,14 @@ export default function Main({ children }: { children: ReactNode }) {
 
   return (
     <html lang="en">
+      <Head>
+        <title>Martin GK</title>
+        <meta name="description" content="Martin Gainza Koulaksezian CV" />
+        <meta name="google" content="notranslate" />
+        <link rel="icon" href="/images/icon.jpg" />
+      </Head>
       <body>
         <Providers>
-          <Head>
-            <title>Martin GK</title>
-            <meta name="description" content="Martin Gainza Koulaksezian CV" />
-            <meta name="google" content="notranslate" />
-            <link rel="icon" href="/images/icon.jpg" />
-          </Head>
           <MobileTopTitle title={NavOptions.getOptionTitleByID(itemSelected)} />
           <div
             className="absolute h-screen overflow-scroll bg-black md:relative md:bg-[#1a1a1a]"

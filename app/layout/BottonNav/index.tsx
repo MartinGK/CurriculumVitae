@@ -22,7 +22,7 @@ export default function BottomNav({ itemSelected }) {
         return <BottomNavButton
           key={`link to ${navOpt.segment}`}
           href={navOpt.link}
-          label={navOpt.segment}
+          label={navOpt.title}
           selected={itemSelected === navOpt.id}
           icon={navIcons[navOpt.icon]}
         />;
