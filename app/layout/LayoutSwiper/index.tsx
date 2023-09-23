@@ -7,8 +7,8 @@ import { useSwipeable } from "react-swipeable";
 import { useRouter } from "next/navigation";
 
 type Props = {
-    children: ReactNode;
-    itemSelected: string;
+  children: ReactNode;
+  itemSelected: string;
 }
 
 const navStyles = {
@@ -37,7 +37,7 @@ export default function LayoutSwiper({ children, itemSelected }: Props) {
     }
   };
 
-  const { ref:sectionRef, ...handlers } = useSwipeable({
+  const { ref: sectionRef, ...handlers } = useSwipeable({
     onSwipedLeft,
     onSwipedRight,
     trackMouse: true,
@@ -45,16 +45,10 @@ export default function LayoutSwiper({ children, itemSelected }: Props) {
     swipeDuration: 2000,
   });
 
-  // useEffect(() => {
-  //     if (sectionRef) {
-  //         sectionRef.scrollIntoView();
-  //     }
-  // }, [itemSelected]);
-
   useEffect(() => {
     const timer = setTimeout(() => {
       setLastItemSelected(itemSelected);
-    }, 300);
+    }, 150);
 
     return () => clearInterval(timer);
   }, [itemSelected]);
@@ -63,19 +57,18 @@ export default function LayoutSwiper({ children, itemSelected }: Props) {
     <div
       ref={sectionRef}
       className={cx(
-        `bg-card-1 bg-transparent px-5 text-white duration-[1s] ${navStyles[itemSelected]}`,
+        `bg-card-1 bg-transparent px-5 text-white duration-[0.5s] ${navStyles[itemSelected]}`,
         { "transition-[transform] ": itemSelected !== lastItemSelected },
         {
           "translate-x-80 opacity-0": NavOptions.getOptionPositionByID(itemSelected) >
-                        NavOptions.getOptionPositionByID(lastItemSelected)
+            NavOptions.getOptionPositionByID(lastItemSelected)
         },
         {
           "-translate-x-80 opacity-0": NavOptions.getOptionPositionByID(itemSelected) <
-                        NavOptions.getOptionPositionByID(lastItemSelected)
+            NavOptions.getOptionPositionByID(lastItemSelected)
         },
         { "transition-all opacity-1 translate-x-0": itemSelected === lastItemSelected },
       )}
-      // transition={{ type: "tween", stiffness: 100, bounce: 0 }}
       {...handlers}
     >
       {children}

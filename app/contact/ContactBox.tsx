@@ -81,7 +81,7 @@ export default function ContactBox() {
       <button
         aria-label="send message"
         color="primary"
-        className="w-fit justify-self-end"
+        className="w-fit justify-self-end mr-2"
         type="submit">
         {isLoading ? (
           <Loader />
