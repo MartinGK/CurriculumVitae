@@ -1,7 +1,6 @@
 "use client";
 import { ReactNode } from "react";
 import { Analytics } from "@vercel/analytics/react";
-import Head from "next/head";
 import BottomNav from "./layout/BottonNav";
 import Providers from "./layout/Providers";
 import MobileTopTitle from "./layout/MobileTopTitle";
