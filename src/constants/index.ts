@@ -1,4 +1,4 @@
-export * from './navOptions';
+export * from "./navOptions";
 
 export const skills = [
   { text: "ReactJS", value: 5 },

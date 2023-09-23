@@ -10,16 +10,16 @@ type Props = {
 }
 
 export default function BottomNavButton({ href, label, icon, selected }: Props) {
-    return (
-        <Link href={href}
-            aria-label={label}
-        >
-            <button className={classNames(
-                "flex gap-1 whitespace-nowrap border-b-2 box-border p-4 border-transparent outline-none transition-all duration-75",
-                { "text-red-600 border-t-red-600": selected }
-            )}>
-                {icon}
-            </button>
-        </Link >
-    );
+  return (
+    <Link href={href}
+      aria-label={label}
+    >
+      <button className={classNames(
+        "flex gap-1 whitespace-nowrap border-b-2 box-border p-4 border-transparent outline-none transition-all duration-75",
+        { "text-red-600 border-t-red-600": selected }
+      )}>
+        {icon}
+      </button>
+    </Link >
+  );
 }

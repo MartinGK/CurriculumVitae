@@ -1,7 +1,8 @@
+import { ReactNode } from "react";
 import { AiFillStar } from "react-icons/ai";
 
 export const Stars = ({ q }) => {
-  const stars = [];
+  const stars: ReactNode[] = [];
   for (let i = 0; i < q; i++) {
     stars.push(<AiFillStar key={i} className="text-red" />);
   }

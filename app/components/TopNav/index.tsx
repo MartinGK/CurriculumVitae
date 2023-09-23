@@ -6,10 +6,10 @@ import { NavOptions, NavOption } from "@constants";
 import TopNavButton from "./TopNavButton";
 
 const navIcons = {
-  'FaUser': <FaUser className="h-6 w-6" />,
-  'MdWork': <MdWork className="h-6 w-6" />,
-  'GiSkills': <GiSkills className="h-6 w-6" />,
-  'BsChat': <BsChat className="h-6 w-6" />,
+  "FaUser": <FaUser className="h-6 w-6" />,
+  "MdWork": <MdWork className="h-6 w-6" />,
+  "GiSkills": <GiSkills className="h-6 w-6" />,
+  "BsChat": <BsChat className="h-6 w-6" />,
 };
 
 export default function TopNav({ itemSelected }) {

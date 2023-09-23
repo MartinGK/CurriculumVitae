@@ -3,13 +3,13 @@ import { MdWork } from "react-icons/md";
 import { GiSkills } from "react-icons/gi";
 import { BsChat } from "react-icons/bs";
 import { NavOption, NavOptions } from "@constants";
-import BottomNavButton from './BottomNavButton';
+import BottomNavButton from "./BottomNavButton";
 
 const navIcons = {
-  'FaUser': <FaUser className="h-6 w-6" />,
-  'MdWork': <MdWork className="h-6 w-6" />,
-  'GiSkills': <GiSkills className="h-6 w-6" />,
-  'BsChat': <BsChat className="h-6 w-6" />,
+  "FaUser": <FaUser className="h-6 w-6" />,
+  "MdWork": <MdWork className="h-6 w-6" />,
+  "GiSkills": <GiSkills className="h-6 w-6" />,
+  "BsChat": <BsChat className="h-6 w-6" />,
 };
 
 export default function BottomNav({ itemSelected }) {

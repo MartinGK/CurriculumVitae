@@ -1,10 +1,8 @@
 import { colors } from "@constants";
 
-type Props = {}
-
-export default function Divider({ }: Props) {
+export default function Divider() {
   return (
-    <div className="left-0 w-full" color={colors.red}>
+    <div className="left-0 w-full border-transparent border-b-red-600 border-[1px]" color={colors.red}>
 
     </div>
   );
