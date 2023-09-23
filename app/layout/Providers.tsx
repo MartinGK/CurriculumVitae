@@ -10,11 +10,11 @@ export default function Providers({ children }: { children: ReactNode }) {
     <SidebarOptionsProvider>
       <QueryClientProvider client={queryClient}>
 
-      <ToastContainer
-            toastClassName="!bg-[#1c1c1c] "
-            bodyClassName="!bg-[#1c1c1c] !font-red"
-            hideProgressBar
-          />
+        <ToastContainer
+          toastClassName="!bg-[#1c1c1c] "
+          bodyClassName="!bg-[#1c1c1c] !font-red"
+          hideProgressBar
+        />
         {children}
       </QueryClientProvider>
     </SidebarOptionsProvider>
