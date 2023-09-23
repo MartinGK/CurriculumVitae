@@ -10,7 +10,7 @@ import TopNav from "../app/components/TopNav";
 import { NavOptions, NavOptionsIDsValues } from "@constants";
 import { useSelectedLayoutSegment } from "next/navigation";
 import LayoutSwiper from "./LayoutSwiper";
-import "react-toastify/dist/ReactToastify.css";
+import "../node_modules/react-toastify/dist/ReactToastify.css";
 import "../styles/tailwind.css";
 import "../styles/globals.css";
 
