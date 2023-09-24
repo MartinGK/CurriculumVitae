@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Highlight from "../components/Highlight";
 import { BsGithub, BsStackOverflow, BsLinkedin } from "react-icons/bs";
 import Link from "next/link";
 import HighlightText from "../components/HighlightText";
@@ -42,7 +41,7 @@ export default function AboutMe() {
         <div className="flex justify-center pt-5 md:px-5">
           <div className="w-5/8">
             <p className="text-base md:text-xl">
-              <HighlightText text={`Hi! [I'm Martin], I'm from Argentina. I'm [an experienced web developer.] I&apos;m passionate about technology and I'm passionate about technology and books; I'm [always looking for new challenges.] When I had to take a fullstack profile I usually used the MERN combo. I'm a goal-oriented team player who enjoys learning new tech skills and keeping my team and myself up to date with the latest trends. I love working in teams and I believe I have the right set of soft skills to balance my technical skills and bring value to the projects I'm entrusted with.`}/>
+              <HighlightText text={"Hi! [I'm Martin], I'm from Argentina. I'm [an experienced web developer.] I&apos;m passionate about technology and I'm passionate about technology and books; I'm [always looking for new challenges.] When I had to take a fullstack profile I usually used the MERN combo. I'm a goal-oriented team player who enjoys learning new tech skills and keeping my team and myself up to date with the latest trends. I love working in teams and I believe I have the right set of soft skills to balance my technical skills and bring value to the projects I'm entrusted with."}/>
               {/* Hi! <Highlight>I&apos;m Martin</Highlight>, I&apos;m from
                 Argentina. I&apos;m{" "}
               <Highlight>an experienced developer in ReactJS.</Highlight>{" "}
