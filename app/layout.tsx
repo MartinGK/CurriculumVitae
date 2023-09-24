@@ -18,6 +18,7 @@ export default function Main({ children }: { children: ReactNode }) {
 
   return (
     <html lang="en">
+      <title>Martin GK</title>
       <body>
         <Providers>
           <MobileTopTitle title={NavOptions.getOptionTitleByID(itemSelected)} />
