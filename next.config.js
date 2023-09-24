@@ -5,6 +5,13 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 })
 
 /** @type {import('next').NextConfig} */
+
+const withPWA = require('next-pwa')({
+  dest: 'public',
+  register: true,
+  skipWaiting: true,
+});
+
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
@@ -14,9 +21,8 @@ const nextConfig = {
   },
   webpack: config => {
     config.resolve.modules.push(path.resolve("./src"));
-
     return config;
   }
 };
 
-module.exports = withBundleAnalyzer(nextConfig);
+module.exports = withPWA(withBundleAnalyzer(nextConfig));

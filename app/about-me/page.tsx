@@ -1,8 +1,8 @@
-"use client";
 import Image from "next/image";
 import Highlight from "../components/Highlight";
 import { BsGithub, BsStackOverflow, BsLinkedin } from "react-icons/bs";
 import Link from "next/link";
+import HighlightText from "../components/HighlightText";
 
 export default function AboutMe() {
   return (
@@ -10,10 +10,10 @@ export default function AboutMe() {
       <div className="md:w-1/4">
         <Image
           alt="Foto perfil"
-          src="/images/FotoPerfil.jpg"
+          src="/images/FotoPerfil-512x512.jpeg"
           priority={true}
-          width={300}
-          height={300}
+          width={512}
+          height={512}
           quality={100}
           className="mx-auto mb-8 rounded-full border-4 border-red"
         />
@@ -42,7 +42,8 @@ export default function AboutMe() {
         <div className="flex justify-center pt-5 md:px-5">
           <div className="w-5/8">
             <p className="text-base md:text-xl">
-              Hi! <Highlight>I&apos;m Martin</Highlight>, I&apos;m from
+              <HighlightText text={`Hi! [I'm Martin], I'm from Argentina. I'm [an experienced web developer.] I&apos;m passionate about technology and I'm passionate about technology and books; I'm [always looking for new challenges.] When I had to take a fullstack profile I usually used the MERN combo. I'm a goal-oriented team player who enjoys learning new tech skills and keeping my team and myself up to date with the latest trends. I love working in teams and I believe I have the right set of soft skills to balance my technical skills and bring value to the projects I'm entrusted with.`}/>
+              {/* Hi! <Highlight>I&apos;m Martin</Highlight>, I&apos;m from
                 Argentina. I&apos;m{" "}
               <Highlight>an experienced developer in ReactJS.</Highlight>{" "}
                 I&apos;m passionate about technology and I&apos;m{" "}
@@ -52,7 +53,7 @@ export default function AboutMe() {
                 tech skills and keeping my team and myself up to date with the
                 latest trends. I love working in teams and I believe I have the
                 right set of soft skills to balance my technical skills and
-                bring value to the projects I&apos;m entrusted with.
+                bring value to the projects I&apos;m entrusted with. */}
             </p>
           </div>
         </div>

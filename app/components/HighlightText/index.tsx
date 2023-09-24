@@ -5,7 +5,6 @@ export default function HighlightText({ text }: { text: string }) {
 
   return (
     <>
-      {" "}
       {p.map((parte, index) => {
         if (parte.startsWith("[") && parte.endsWith("]")) {
           const texto = parte.substring(1, parte.length - 1);
