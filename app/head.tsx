@@ -6,5 +6,8 @@ export const metadata: Metadata & { google: string } = {
   colorScheme: "dark",
   google: "notranslate",
   manifest: "/manifest.json",
+  icons: {
+    icon: "/images/icon.jpeg"
+  }
 };
 
