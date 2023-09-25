@@ -1,14 +1,14 @@
 
 "use client";
 import { ReactNode, useEffect, useState } from "react";
-import { NavOptions, NavOptionsIDs } from "@constants";
+import { NavOptionsIDs, NavOptions, NavOptionsIDsValues } from "@constants";
+import { useSelectedLayoutSegment } from "next/navigation";
 import cx from "classnames";
 import { useSwipeable } from "react-swipeable";
 import { useRouter } from "next/navigation";
 
 type Props = {
   children: ReactNode;
-  itemSelected: string;
 }
 
 const navStyles = {
@@ -19,9 +19,11 @@ const navStyles = {
 
 };
 
-export default function LayoutSwiper({ children, itemSelected }: Props) {
+export default function LayoutSwiper({ children }: Props) {
   const { push } = useRouter();
   const [lastItemSelected, setLastItemSelected] = useState("");
+  const segment = useSelectedLayoutSegment();
+  const itemSelected: NavOptionsIDsValues = NavOptions.getOptionIDBySegment(segment);
 
   const onSwipedRight = () => {
     const currentIndex = NavOptions.getOptionByID(itemSelected).position;

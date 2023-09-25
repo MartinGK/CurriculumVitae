@@ -1,8 +1,10 @@
+"use client";
+import { NavOption, NavOptions, NavOptionsIDsValues } from "@constants";
+import { useSelectedLayoutSegment } from "next/navigation";
 import { FaUser } from "react-icons/fa";
 import { MdWork } from "react-icons/md";
 import { GiSkills } from "react-icons/gi";
 import { BsChat } from "react-icons/bs";
-import { NavOptions, NavOption } from "@constants";
 import TopNavButton from "./TopNavButton";
 
 const navIcons = {
@@ -12,7 +14,10 @@ const navIcons = {
   "BsChat": <BsChat className="h-6 w-6" />,
 };
 
-export default function TopNav({ itemSelected }) {
+export default function TopNav() {
+  const segment = useSelectedLayoutSegment();
+  const itemSelected: NavOptionsIDsValues = NavOptions.getOptionIDBySegment(segment);
+
   return (
     <nav
       className="!hidden w-min md:!flex flex-row justify-start bg-black text-white border-b-[3px] border-solid border-transparent rounded-t-lg"
