@@ -8,9 +8,9 @@ type Props = {
 export default function Card({ title, content }: Props) {
   return (
     <div className="!bg-white !bg-opacity-10 md:min-h-[22rem] md:min-w-24 p-5">
-      <h5 className="font-bold md:text-2xl md:min-h-[4rem]">
+      <h1 className="font-bold md:text-2xl md:min-h-[4rem]">
         {title}
-      </h5>
+      </h1>
       <p className="pt-2 md:text-md">{content}</p>
     </div>
   );
