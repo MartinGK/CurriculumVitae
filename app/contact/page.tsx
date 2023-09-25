@@ -1,4 +1,3 @@
-"use client";
 import { AiOutlineMail } from "react-icons/ai";
 import Highlight from "../components/Highlight";
 import ContactBox from "./ContactBox";
