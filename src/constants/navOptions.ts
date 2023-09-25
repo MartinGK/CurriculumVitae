@@ -80,6 +80,12 @@ class NavOptionsGetter {
     return optionFound ? optionFound.id : this.first.id;
   }
 
+  getOptionTitleBySegment(segment: string | null) {
+    if (segment === null) return "";
+    const optionFound = this.options.find(opt => opt.segment === segment);
+    return optionFound ? optionFound.title : this.first.title;
+  }
+
   getOptionPositionByID(key: string) {
     return this.getOptionByID(key).position;
   }

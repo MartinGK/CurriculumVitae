@@ -5,7 +5,7 @@ import Divider from "../../components/Divider";
 
 export default function MobileTopTitle() {
   const segment = useSelectedLayoutSegment();
-  const title: NavOptionsIDsValues = NavOptions.getOptionIDBySegment(segment);
+  const title: NavOptionsIDsValues = NavOptions.getOptionTitleBySegment(segment);
 
   return (
     <div className="h-18 !fixed z-20 w-full bg-black pt-6 md:!hidden">
