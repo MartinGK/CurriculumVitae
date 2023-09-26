@@ -13,7 +13,7 @@ import "../styles/globals.css";
 export const metadata: Metadata = {
   title: "Martin GK",
   description: "Martin GK online cv",
-  themeColor: "#000", 
+  themeColor: "#000",
   icons: [
     {
       url: "/images/icon-192x192.png",
