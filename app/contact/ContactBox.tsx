@@ -48,7 +48,7 @@ export default function ContactBox() {
       }
       onSubmit={handleSendMessage}
     >
-      <h3>Contact me</h3>
+      <h1>Contact me</h1>
       <TextField
         label="firstName"
         id="firstName"
