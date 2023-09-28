@@ -18,13 +18,16 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "baseUrl": "./src",
+    "baseUrl": "./app",
     "paths": {
       "components/*": [
         "components/*"
       ],
       "contexts/*": [
         "contexts/*"
+      ],
+      "constants/*": [
+        "constants/*"
       ],
       "@constants": [
         "constants/index.ts"

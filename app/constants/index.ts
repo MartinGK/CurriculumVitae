@@ -1,21 +1,34 @@
 export * from "./navOptions";
 
 export const skills = [
-  { text: "ReactJS", value: 5 },
-  { text: "NextJs", value: 5 },
-  { text: "Redux", value: 5 },
-  { text: "Testing Library", value: 5 },
-  { text: "Javascript", value: 5 },
-  { text: "CSS3", value: 5 },
+  { text: "NextJs", value: 7 },
+  { text: "Typescript", value: 7 },
+  { text: "Redux", value: 6 },
+  { text: "Javascript", value: 6 },
   { text: "SASS", value: 5 },
   { text: "TailwindCSS", value: 5 },
+  { text: "MaterialUI", value: 4 },
+  { text: "TailwindUI", value: 4 },
+  { text: "Rechart", value: 4 },
+  { text: "Storybook", value: 4 },
+  { text: "Leadership", value: 5 },
+  { text: "Communication", value: 5 },
+  { text: "Problem-solving", value: 5 },
+  { text: "Teamwork", value: 5 },
+  { text: "Adaptability", value: 5 },
   { text: "NodeJS", value: 4 },
   { text: "Express", value: 4 },
   { text: "MongoDB", value: 4 },
+  { text: "Graphql", value: 5 },
   { text: "Jest", value: 3 },
-  { text: "Communication", value: 5 },
-  { text: "Agile Methodology", value: 5 },
+  { text: "Testing Library", value: 5 },
+  { text: "Enzyme", value: 5 },
+  { text: "Spanish", value: 5 },
+  { text: "English", value: 5 },
+  { text: "Kanban", value: 5 },
+  { text: "Scrum", value: 5 },
 ];
+
 export const skillsByGroup = {
   Frontend: [
     { name: "ReactJS", value: 5 },
