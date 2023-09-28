@@ -21,7 +21,7 @@ export async function POST(req: NextRequest) {
   };
 
   try {
-    transporter.sendMail(mailOptions, (error: Error | null) => {
+    await transporter.sendMail(mailOptions, (error: Error | null) => {
       if (error) {
         throw error;
       }
