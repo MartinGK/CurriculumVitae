@@ -21,12 +21,16 @@ export async function POST(req: NextRequest) {
   };
 
   try {
-    await transporter.sendMail(mailOptions, (error: Error | null) => {
-      if (error) {
-        throw error;
-      }
+    return await new Promise(resolve => {
+      transporter.sendMail(mailOptions, async (error: Error | null) => {
+        if (error) {
+          throw error;
+        }
+        resolve(NextResponse.json({
+          status: 200, message: "success"
+        }))
+      })
     });
-    return NextResponse.json({ status: 200, message: "success" });
   } catch (err) {
     return NextResponse.json(err);
   }
