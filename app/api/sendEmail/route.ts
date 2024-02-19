@@ -28,8 +28,8 @@ export async function POST(req: NextRequest) {
         }
         resolve(NextResponse.json({
           status: 200, message: "success"
-        }))
-      })
+        }));
+      });
     });
   } catch (err) {
     return NextResponse.json(err);
