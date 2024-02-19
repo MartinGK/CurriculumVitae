@@ -1,3 +1,5 @@
+export * from "./navOptions";
+
 export const skills = [
   { text: "ReactJS", value: 5 },
   { text: "NextJs", value: 5 },
@@ -163,15 +165,6 @@ export const experiences = [
     ],
   },
 ];
-
-export const NavOptions = {
-  ABOUT_ME: "About me",
-  EXPERIENCES: "Experiences",
-  SKILLS: "Skills",
-  CONTACT: "Contact",
-};
-
-export const navOptionsArray = Object.values(NavOptions);
 
 export const colors = {
   red: "#f50537",

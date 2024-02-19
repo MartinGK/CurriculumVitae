@@ -1,3 +1,4 @@
+"use client";
 import { createContext, ReactNode } from "react";
 import sidebarOptions, { SidebarOptions } from "store/sidebarOptions";
 

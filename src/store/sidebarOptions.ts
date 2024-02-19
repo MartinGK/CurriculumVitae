@@ -1,8 +1,8 @@
-import { NavOptions, navOptionsArray } from "@constants";
+import { NavOptions, NavOption } from "@constants";
 import { action, computed, makeObservable, observable } from "mobx";
 
 export class SidebarOptions {
-  _itemSelected = NavOptions.ABOUT_ME;
+  _itemSelected: NavOption = NavOptions.first;
 
   constructor() {
     makeObservable(this, {
@@ -13,25 +13,23 @@ export class SidebarOptions {
     });
   }
 
-  get itemSelected(){
+  get itemSelected() {
     return this._itemSelected;
   }
 
-  set itemSelected(newItemSelected: string) {
+  set itemSelected(newItemSelected: NavOption) {
     this._itemSelected = newItemSelected;
   }
 
   onSwipedRight() {
-    const currentIndex = navOptionsArray.indexOf(this._itemSelected);
-    if (currentIndex > 0) {
-      this._itemSelected = navOptionsArray[currentIndex - 1];
+    if (this._itemSelected.position > 0) {
+      this._itemSelected = NavOptions.getOptionByPosition(this._itemSelected.position - 1);
     }
   }
 
   onSwipedLeft() {
-    const currentIndex = navOptionsArray.indexOf(this._itemSelected);
-    if (currentIndex < navOptionsArray.length - 1) {
-      this._itemSelected = navOptionsArray[currentIndex + 1];
+    if (this._itemSelected.position < Object.keys(NavOptions).length - 1) {
+      this._itemSelected = NavOptions.getOptionByPosition(this._itemSelected.position + 1);
     }
   }
 }
