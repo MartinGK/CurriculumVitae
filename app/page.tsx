@@ -121,7 +121,6 @@ function Hero() {
           <dl className="space-y-5">
             {[
               ["Email", contact.email, `mailto:${contact.email}`],
-              ["Phone", contact.phone, `tel:${contact.phone.replace(/\s/g, "")}`],
               ["Website", contact.website, "https://martin-gk.com"]
             ].map(([label, value, href]) => (
               <div key={label} className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
@@ -311,9 +310,6 @@ function Contact() {
         <div className="mt-9 flex flex-col justify-center gap-3 sm:flex-row">
           <a href={`mailto:${contact.email}`} className="focus-ring rounded-full bg-white px-6 py-3 text-sm font-semibold text-ink transition hover:bg-accent">
             {contact.email}
-          </a>
-          <a href={`tel:${contact.phone.replace(/\s/g, "")}`} className="focus-ring rounded-full border border-white/10 px-6 py-3 text-sm font-semibold text-white transition hover:border-accent/40 hover:bg-white/5">
-            {contact.phone}
           </a>
           <a href="https://martin-gk.com" className="focus-ring rounded-full border border-white/10 px-6 py-3 text-sm font-semibold text-white transition hover:border-accent/40 hover:bg-white/5">
             martin-gk.com

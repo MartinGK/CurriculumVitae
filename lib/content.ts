@@ -1,6 +1,5 @@
 export const contact = {
   email: "mrtgeka@gmail.com",
-  phone: "+54 9 11 3101 1879",
   website: "martin-gk.com",
   linkedin: "https://linkedin.com/in/martin-gainza",
   github: "https://github.com/martingainza",
