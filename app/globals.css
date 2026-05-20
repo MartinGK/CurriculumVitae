@@ -38,6 +38,31 @@ body {
     mask-image: radial-gradient(circle at 50% 0%, black, transparent 72%);
   }
 
+  .star-field {
+    background-image:
+      radial-gradient(circle, rgba(255, 255, 255, 0.88) 0 1px, transparent 1.4px),
+      radial-gradient(circle, rgba(167, 243, 208, 0.64) 0 1px, transparent 1.6px),
+      radial-gradient(circle, rgba(147, 197, 253, 0.48) 0 1px, transparent 1.5px);
+    background-position:
+      0 0,
+      72px 88px,
+      136px 42px;
+    background-size:
+      190px 190px,
+      280px 280px,
+      360px 360px;
+    animation:
+      stars-drift 46s linear infinite,
+      stars-twinkle 6.5s ease-in-out infinite;
+  }
+
+  .star-field-soft {
+    filter: blur(0.4px);
+    transform: scale(1.12);
+    animation-duration: 72s, 8.5s;
+    animation-direction: reverse, alternate;
+  }
+
   .glass-card {
     border: 1px solid rgba(255, 255, 255, 0.1);
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.075), rgba(255, 255, 255, 0.035));
@@ -47,6 +72,33 @@ body {
 
   .focus-ring {
     @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/80 focus-visible:ring-offset-2 focus-visible:ring-offset-ink;
+  }
+}
+
+@keyframes stars-drift {
+  from {
+    background-position:
+      0 0,
+      72px 88px,
+      136px 42px;
+  }
+
+  to {
+    background-position:
+      190px 190px,
+      352px 368px,
+      496px 402px;
+  }
+}
+
+@keyframes stars-twinkle {
+  0%,
+  100% {
+    opacity: 0.58;
+  }
+
+  50% {
+    opacity: 1;
   }
 }
 

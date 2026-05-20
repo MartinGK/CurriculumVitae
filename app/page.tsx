@@ -52,6 +52,8 @@ function Navbar() {
 function AnimatedBackground() {
   return (
     <div aria-hidden="true" className="pointer-events-none fixed inset-0 -z-10 overflow-hidden bg-ink">
+      <div className="star-field absolute inset-0 opacity-80" />
+      <div className="star-field star-field-soft absolute inset-0 opacity-45" />
       <div className="premium-grid absolute inset-0 opacity-70" />
       <Motion.div
         className="absolute left-1/2 top-[-18rem] h-[36rem] w-[36rem] -translate-x-1/2 rounded-full bg-accent/10 blur-3xl"
@@ -174,8 +176,8 @@ function Experience() {
         title="A timeline of product-facing engineering across AI, SaaS, mobile, and games."
         copy="Focused roles with a consistent thread: ship usable systems quickly, keep quality high, and close the distance between product, design, and engineering."
       />
-      <div className="relative mx-auto max-w-4xl">
-        <div className="absolute bottom-0 left-4 top-0 w-px bg-gradient-to-b from-accent/70 via-white/15 to-transparent sm:left-1/2" aria-hidden="true" />
+      <div className="relative mx-auto max-w-5xl">
+        <div className="absolute bottom-0 left-4 top-0 w-px bg-gradient-to-b from-accent/70 via-white/15 to-transparent md:left-1/2 md:-translate-x-px" aria-hidden="true" />
         <div className="space-y-8">
           {experience.map((item, index) => (
             <Motion.article
@@ -184,13 +186,13 @@ function Experience() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.62, delay: index * 0.04, ease: [0.22, 1, 0.36, 1] }}
-              className={`relative grid gap-6 pl-12 sm:grid-cols-2 sm:pl-0 ${index % 2 === 0 ? "sm:text-right" : "sm:[&>*:first-child]:col-start-2"}`}
+              className={`relative grid pl-12 md:grid-cols-2 md:gap-x-16 md:pl-0 ${index % 2 === 0 ? "md:text-right" : ""}`}
             >
-              <div className="absolute left-2.5 top-7 z-10 h-3 w-3 rounded-full border border-accent bg-ink shadow-[0_0_0_8px_rgba(167,243,208,0.08)] sm:left-1/2 sm:-ml-1.5" />
-              <div className={`glass-card rounded-3xl p-6 ${index % 2 === 0 ? "sm:mr-8" : "sm:ml-8"}`}>
+              <div className="absolute left-2.5 top-7 z-10 h-3 w-3 rounded-full border border-accent bg-ink shadow-[0_0_0_8px_rgba(167,243,208,0.08)] md:left-1/2 md:-translate-x-1/2" />
+              <div className={`glass-card rounded-3xl p-6 sm:p-7 ${index % 2 === 0 ? "md:mr-8" : "md:col-start-2 md:ml-8"}`}>
                 <p className="text-sm font-medium text-accent/85">{item.period}</p>
                 <h3 className="mt-2 text-xl font-semibold text-white">{item.role} · {item.company}</h3>
-                <ul className={`mt-5 space-y-3 text-sm leading-6 text-muted ${index % 2 === 0 ? "sm:ml-auto" : ""}`}>
+                <ul className={`mt-5 space-y-3 text-sm leading-6 text-muted ${index % 2 === 0 ? "md:ml-auto" : ""}`}>
                   {item.highlights.map((highlight) => (
                     <li key={highlight}>{highlight}</li>
                   ))}
