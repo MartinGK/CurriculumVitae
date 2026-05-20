@@ -1,64 +1,30 @@
-import { ReactNode } from "react";
-import { Analytics } from "@vercel/analytics/react";
-import BottomNav from "./layout/BottonNav";
-import Providers from "./layout/Providers";
-import MobileTopTitle from "./layout/MobileTopTitle";
-import LayoutSwiper from "./layout/LayoutSwiper";
-import DesktopTopNav from "./layout/DesktopTopNav";
-import { Metadata } from "next";
-import "../node_modules/react-toastify/dist/ReactToastify.css";
-import "../styles/tailwind.css";
-import "../styles/globals.css";
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import "./globals.css";
+
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
 
 export const metadata: Metadata = {
-  title: "Martin GK",
-  description: "Martin GK online cv",
-  themeColor: "#000",
-  icons: [
-    {
-      url: "/images/icon-192x192.png",
-      sizes: "192x192",
-      type: "image/png"
-    },
-    {
-      url: "/images/icon-256x256.png",
-      sizes: "256x256",
-      type: "image/png"
-    },
-    {
-      url: "/images/icon-384x384.png",
-      sizes: "384x384",
-      type: "image/png"
-    },
-    {
-      url: "/images/icon-512x512.png",
-      sizes: "512x512",
-      type: "image/png"
-    }
-  ]
+  title: "Martin Ezequiel Gainza Koulaksezian · Senior Product Engineer",
+  description:
+    "Senior Product Engineer building AI-powered products, scalable frontend systems, and polished end-to-end user experiences.",
+  metadataBase: new URL("https://martin-gk.com"),
+  openGraph: {
+    title: "Martin Gainza · Senior Product Engineer",
+    description:
+      "Product-oriented software engineer specialized in AI-powered products, scalable frontend systems, UX-sensitive execution, and fast product delivery.",
+    url: "https://martin-gk.com",
+    siteName: "Martin Gainza Portfolio",
+    type: "website"
+  }
 };
 
-export default function Main({ children }: { children: ReactNode }) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
-      <body>
-        <Providers>
-          <MobileTopTitle />
-          <div
-            className="absolute h-screen overflow-scroll bg-black md:relative md:bg-[#1a1a1a]"
-          >
-            <main className="bg-background-1 md:border-1 relative flex justify-center bg-transparent md:m-28 md:flex-col"
-            >
-              <DesktopTopNav />
-              <LayoutSwiper >
-                {children}
-              </LayoutSwiper>
-            </main>
-          </div>
-          <BottomNav />
-          <Analytics />
-        </Providers >
-      </body >
-    </html >
+    <html lang="en" className="scroll-smooth">
+      <body className={`${inter.variable} bg-ink font-sans text-silver antialiased`}>
+        {children}
+      </body>
+    </html>
   );
 }
